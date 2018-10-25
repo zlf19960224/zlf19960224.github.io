@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>竹林の风 - Bamboo-wind</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="博客,"> 
+    <meta name="author" content="lingfeng zhu"> 
+    <link rel="alternative" href="atom.xml" title="竹林の风" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+</head>
+</html>
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>十月 25, 2018</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="ES6及ES6"><a href="#ES6及ES6" class="headerlink" title="ES6及ES6+"></a>ES6及ES6+</h1><h3 id="…args-的用途"><a href="#…args-的用途" class="headerlink" title="[…args]的用途"></a>[…args]的用途</h3><blockquote>
+<ol>
+<li><p>函数声明时使用</p>
+<p>“栗子”：<code>function add([...args]){...}</code></p>
+</li>
+<li><p>收集成数组</p>
+<p>“栗子”：<code>var arr=[1,2,3]</code></p>
+<p>​        <code>function arr_push(){</code></p>
+<p>​            <code>arr.push(4);</code></p>
+<p>​            <code>console.log([...arr])</code>    </p>
+<p>​        <code>//控制台打印出[1,2,3,4]</code>            </p>
+<p>​            <code>}</code></p>
+</li>
+</ol>
+</blockquote>
+<h3 id="对象属性赋值省略的机制"><a href="#对象属性赋值省略的机制" class="headerlink" title="对象属性赋值省略的机制"></a>对象属性赋值省略的机制</h3><blockquote>
+<p>​    由测试可知并不是省略了<code>{x:x}</code>中的<code>:x</code></p>
+<p>​    而是省略了<code>x:</code></p>
+</blockquote>
+<h3 id="object-assign复制对象"><a href="#object-assign复制对象" class="headerlink" title="object.assign复制对象"></a>object.assign复制对象</h3><blockquote>
+<p>​    浅操作，只能复制对象的引用</p>
+<p>​    深拷贝可用JSON下的对象，<code>json.parse(json.stringify(obj))</code></p>
+</blockquote>
+<h6 id="函数简洁表示方法"><a href="#函数简洁表示方法" class="headerlink" title="函数简洁表示方法"></a>函数简洁表示方法</h6><blockquote>
+<p>​    <code>foo:function(){}</code>可表示为<code>foo(){}</code></p>
+<p>​    注：<em>super只能在简洁方法中出现</em></p>
+<p>​        <em>数组深拷贝两种方法：1、<code>arr.slice(0)</code>2、<code>let newArr=arr.concat()</code></em></p>
+</blockquote>
+<p>###JS中基础数据类型&amp;复杂数据类型</p>
+<blockquote>
+<ul>
+<li><p><strong>字符串 数值 布尔类型 null undefined</strong> </p>
+</li>
+<li><p><strong>对象 数组 正则 函数 Map Set</strong></p>
+<p>注：<em>JS中，从变量的存储来看，分为两个地方，栈内存和堆内存。基础数据都存在栈内存</em></p>
+</li>
+</ul>
+</blockquote>
+<h6 id="symbol的妙用"><a href="#symbol的妙用" class="headerlink" title="symbol的妙用"></a>symbol的妙用</h6><blockquote>
+<p>​    <code>symbol.for</code>    看是否存在常量，存在返回此常量，不存在创建此常量    </p>
+<p>​    <code>[symbol.iterator]()</code>创建全新迭代器</p>
+<p><em>当你为对象添加 <code>myObject.toString()</code>方法后，就可以将对象转化为字符串，同样地，当你向任意对象添加 <code>myObject[Symbol.iterator]()</code>方法，就可以用<code>for of</code>遍历这个对象了。</em></p>
+</blockquote>
+<p>###生成器与迭代器的区别</p>
+<blockquote>
+<p>​    生成器包含一个或者多个yeild</p>
+<p>​    迭代器只要是一个iterator就行</p>
+<p><em>问题来了：什么是iterator？名词解释：遍历器，简而言之拥有next方法和done方法的可遍历对象</em></p>
+</blockquote>
+<h3 id="class中的一些禁忌"><a href="#class中的一些禁忌" class="headerlink" title="class中的一些禁忌"></a>class中的一些禁忌</h3><blockquote>
+<ol>
+<li><p>Q:子构造器this应当怎样使用？    </p>
+<p>A:必须先用super，特别在框架中如此使用的时候</p>
+<p>R:创建和初始化是在父构造器中实现的</p>
+</li>
+<li><p>Q：static能在new出来的函数对象中使用吗？</p>
+<p>A：不能</p>
+<p>R：只能定义在class类的函数对象中</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="比较-0和-0"><a href="#比较-0和-0" class="headerlink" title="比较+0和-0"></a>比较+0和-0</h3><blockquote>
+<p>​    ===并不能严格比较+0和-0</p>
+<p>​    应用object.is，<strong>一般情况下用===，性能最高</strong></p>
+<p>​    object.has与object.is方法大致相同，只是不能区分+0和-0，</p>
+<p>​    判断数字用<code>Number.isNaN()</code></p>
+</blockquote>
+<h3 id="数组新增方法"><a href="#数组新增方法" class="headerlink" title="数组新增方法"></a>数组新增方法</h3><blockquote>
+<ol>
+<li><p>Array.from把类数组变为一个真数组</p>
+</li>
+<li><p><code>Array.of(1，2，3，4)</code>把参数1-4变为一个数组</p>
+</li>
+<li><p><code>Array.copyWithin(idx,start,end)</code>从右往左覆盖    ?</p>
+</li>
+<li><p>find/findIndex </p>
+<p>find返回数组中第一个符合条件的元素, findIndex返回索引</p>
+</li>
+<li><p>fill</p>
+<ul>
+<li>数组中的每一个值替换</li>
+<li>范围替换 (val,start,end)</li>
+<li>扩展 [].fill.call({length:3},4);返回<strong>对象</strong>，全是4</li>
+</ul>
+</li>
+<li><p>includes返回boolean值</p>
+</li>
+</ol>
+</blockquote>
+<h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><blockquote>
+<p>​    Define:理解为在一个函数内部的函数。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。</p>
+<p>​    自我理解：一个函数a的内部函数b引用上一层函数的变量i，此函数a返回内部函数b，然后此函数a用外部变量接收，即var c = a()相当于c=function b(){};最后执行c();相当于调用b。</p>
+<p>​    作用：1、本来一个局部函数的局部变量只能由他子层函数使用，现在调用到外部来使用</p>
+<p>​            2、隐藏数据，从而保护数据的隐秘性和提高其安全性</p>
+<p>​            3、在内存中维持一个变量，从而实现变量的全局可操作性，例如框架中的cache缓存就必须用到闭包等等。</p>
+</blockquote>
+<h3 id="Vue中使用sort排序进行过滤时出现以下警告"><a href="#Vue中使用sort排序进行过滤时出现以下警告" class="headerlink" title="Vue中使用sort排序进行过滤时出现以下警告"></a>Vue中使用sort排序进行过滤时出现以下警告</h3><blockquote>
+<p>​    array.sort()会计算这个数组本身，会导致filter重新应用，通过复制数组来排序就不会影响原数组重新触发filter过滤器，新数组改变，最后赋值给filter就能达到效果。</p>
+</blockquote>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci="" data-cs="" data-r="" data-o="" data-a="" data-d="false">查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
