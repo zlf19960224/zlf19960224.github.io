@@ -28,7 +28,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">Hello World</h3>
+    <h3 class="subtitle">真实dom</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -45,22 +45,44 @@
     <div class="section">
         <div class="article">
     <div class="main">
-        <h1 class="title">Hello World</h1>
+        <h1 class="title">真实dom</h1>
         <div class="stuff">
-            <span>十月 24, 2018</span>
+            <span>十月 31, 2018</span>
             
 
         </div>
         <div class="content markdown">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <h4 id="真实dom"><a href="#真实dom" class="headerlink" title="真实dom"></a>真实dom</h4><blockquote>
+<p>​    e.target|ref,找到真实dom</p>
+</blockquote>
+<h4 id="同异步关系"><a href="#同异步关系" class="headerlink" title="同异步关系"></a>同异步关系</h4><blockquote>
+<p>setState({})异步，console.log()同步不能输出真实dom个数，setState(()=&gt;{</p>
+<p>console.log(获取dom)；</p>
+<p>(return)</p>
+<p>})</p>
+</blockquote>
+<h3 id="componentwillrecieveprops"><a href="#componentwillrecieveprops" class="headerlink" title="componentwillrecieveprops"></a>componentwillrecieveprops</h3><blockquote>
+<p>​    1、        从父组件接收参数</p>
+<p>​    2、        第一次添加父组件中不执行此生命周期</p>
+<p>​    3、        其余更新</p>
+</blockquote>
+<h4 id="componentwillUnmount"><a href="#componentwillUnmount" class="headerlink" title="componentwillUnmount"></a>componentwillUnmount</h4><blockquote>
+<p>​        子组件移除之前瞬间</p>
+</blockquote>
+<h4 id="动画—-gt-transition-group"><a href="#动画—-gt-transition-group" class="headerlink" title="动画—&gt;transition group"></a>动画—&gt;transition group</h4><blockquote>
+<p>className=”fade”</p>
+<p>入场:1、fade-enter</p>
+<p>​    2、fade-enter-active</p>
+<p>​    3、fade-enter-done</p>
+<p>出场 1、fade-exit</p>
+<p>​    2、fade-exit-active</p>
+<p>​    3、fade-exit-done</p>
+<p>unmountOnExitonEntered((el)=&gt;{</p>
+<p>​    el.style.color=…</p>
+<p>})</p>
+<p>apear={Boolean}</p>
+<p>fade-appear |fade-appear-active</p>
+</blockquote>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">

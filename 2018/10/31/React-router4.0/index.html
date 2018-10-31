@@ -28,7 +28,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">Hello World</h3>
+    <h3 class="subtitle">React-router4.0的坑</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -45,22 +45,37 @@
     <div class="section">
         <div class="article">
     <div class="main">
-        <h1 class="title">Hello World</h1>
+        <h1 class="title">React-router4.0的坑</h1>
         <div class="stuff">
-            <span>十月 24, 2018</span>
+            <span>十月 31, 2018</span>
             
 
         </div>
         <div class="content markdown">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <h3 id="React-router4-0的坑"><a href="#React-router4-0的坑" class="headerlink" title="React-router4.0的坑"></a>React-router4.0的坑</h3><p>许久不用react，结果今天上来写个demo，瞬间就在router上挂住了。</p>
+<blockquote>
+<p>​    原先的router去掉了，换成（类似redux的provider）BrowserRouter包裹整个项目</p>
+<p>​    like:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render( &lt;BrowserRouter&gt;</span><br><span class="line">    &lt;App /&gt;</span><br><span class="line">  &lt;/BrowserRouter&gt;, document.getElementById(&apos;root&apos;));</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>​    然后我突然间发现我的二级路由的component并没有显示，于是我再次请求文档，发现自己在“/”路由下写了个exact，exact关键字，这个关键字是将”/“做唯一匹配，否则”/“和”/xxx”都会匹配到path为”/“的路由，制定exact后，”/page1”就不会再匹配到”/“了。不明白的话，可以动手按照我的路由试试。</p>
+</blockquote>
+<p>栗子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;Route exact path=&quot;/&quot;&gt;</span><br><span class="line">  &lt;Route path=&quot;/home&quot; component=&#123;home&#125;/ &gt;</span><br><span class="line">        &#123;/* &lt;Route path=&quot;&quot;&gt;&lt;/Route&gt; */&#125;</span><br><span class="line">&lt;/Route&gt;</span><br></pre></td></tr></table></figure>
+<p>好了，终于按照我的要求出来了！</p>
+<p>于是乎我又去了解了下BrowserRouter又发现了一片新天地：</p>
+<blockquote>
+<p>​    BrowserRouter、HashRouter、MemoryRouter这三类不同的router，react为什么要分三类呢？</p>
+<p>之前的history分为以下三类：</p>
+<ul>
+<li>hashHistory 老版本浏览器的history</li>
+<li>browserHistory h5的history</li>
+<li>memoryHistory node环境下的history，存储在memory中</li>
+</ul>
+<p>4.0之前版本的react-router针对三者分别实现了createHashHistory、createBrowserHistory和create MemoryHistory三个方法来创建三种情况下的history</p>
+</blockquote>
+<p>今天就到这儿吧！晚安~</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
