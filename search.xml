@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title>React-router4.0的坑</title>
+      <link href="/2018/10/31/React-router4.0/"/>
+      <url>/2018/10/31/React-router4.0/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="React-router4-0的坑"><a href="#React-router4-0的坑" class="headerlink" title="React-router4.0的坑"></a>React-router4.0的坑</h3><p>许久不用react，结果今天上来写个demo，瞬间就在router上挂住了。</p><blockquote><p>​    原先的router去掉了，换成（类似redux的provider）BrowserRouter包裹整个项目</p><p>​    like:</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render( &lt;BrowserRouter&gt;</span><br><span class="line">    &lt;App /&gt;</span><br><span class="line">  &lt;/BrowserRouter&gt;, document.getElementById(&apos;root&apos;));</span><br></pre></td></tr></table></figure><blockquote><p>​    然后我突然间发现我的二级路由的component并没有显示，于是我再次请求文档，发现自己在“/”路由下写了个exact，exact关键字，这个关键字是将”/“做唯一匹配，否则”/“和”/xxx”都会匹配到path为”/“的路由，制定exact后，”/page1”就不会再匹配到”/“了。不明白的话，可以动手按照我的路由试试。</p></blockquote><p>栗子：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;Route exact path=&quot;/&quot;&gt;</span><br><span class="line">  &lt;Route path=&quot;/home&quot; component=&#123;home&#125;/ &gt;</span><br><span class="line">        &#123;/* &lt;Route path=&quot;&quot;&gt;&lt;/Route&gt; */&#125;</span><br><span class="line">&lt;/Route&gt;</span><br></pre></td></tr></table></figure><p>好了，终于按照我的要求出来了！</p><p>于是乎我又去了解了下BrowserRouter又发现了一片新天地：</p><blockquote><p>​    BrowserRouter、HashRouter、MemoryRouter这三类不同的router，react为什么要分三类呢？</p><p>之前的history分为以下三类：</p><ul><li>hashHistory 老版本浏览器的history</li><li>browserHistory h5的history</li><li>memoryHistory node环境下的history，存储在memory中</li></ul><p>4.0之前版本的react-router针对三者分别实现了createHashHistory、createBrowserHistory和create MemoryHistory三个方法来创建三种情况下的history</p></blockquote><p>今天就到这儿吧！晚安~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> React </category>
+          
+          <category> Js </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> React.js </tag>
+            
+            <tag> react-router </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>真实dom</title>
+      <link href="/2018/10/31/truely-dom/"/>
+      <url>/2018/10/31/truely-dom/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="真实dom"><a href="#真实dom" class="headerlink" title="真实dom"></a>真实dom</h4><blockquote><p>​    e.target|ref,找到真实dom</p></blockquote><h4 id="同异步关系"><a href="#同异步关系" class="headerlink" title="同异步关系"></a>同异步关系</h4><blockquote><p>setState({})异步，console.log()同步不能输出真实dom个数，setState(()=&gt;{</p><p>console.log(获取dom)；</p><p>(return)</p><p>})</p></blockquote><h3 id="componentwillrecieveprops"><a href="#componentwillrecieveprops" class="headerlink" title="componentwillrecieveprops"></a>componentwillrecieveprops</h3><blockquote><p>​    1、        从父组件接收参数</p><p>​    2、        第一次添加父组件中不执行此生命周期</p><p>​    3、        其余更新</p></blockquote><h4 id="componentwillUnmount"><a href="#componentwillUnmount" class="headerlink" title="componentwillUnmount"></a>componentwillUnmount</h4><blockquote><p>​        子组件移除之前瞬间</p></blockquote><h4 id="动画—-gt-transition-group"><a href="#动画—-gt-transition-group" class="headerlink" title="动画—&gt;transition group"></a>动画—&gt;transition group</h4><blockquote><p>className=”fade”</p><p>入场:1、fade-enter</p><p>​    2、fade-enter-active</p><p>​    3、fade-enter-done</p><p>出场 1、fade-exit</p><p>​    2、fade-exit-active</p><p>​    3、fade-exit-done</p><p>unmountOnExitonEntered((el)=&gt;{</p><p>​    el.style.color=…</p><p>})</p><p>apear={Boolean}</p><p>fade-appear |fade-appear-active</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Js </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>狠</title>
+      <link href="/2018/10/25/casual-literator/"/>
+      <url>/2018/10/25/casual-literator/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h2><p>​    今日和高中好友偶然谈起“做人是否应该狠？”，想着昨日创建的博客，便作此文。</p><p>​    我自己本就是一个优柔寡断之人，爱受影响。听着好友’人不狠不稳‘，我刚开始确实不敢苟同。在我的象牙塔里，人生奋斗是理所当然的会过上好生活，’好人占多数‘那些鸡汤般语言充斥着我的耳根。且不说这些话的正确与否，我坚持的是自己那颗本心&gt;即善良只为心安。可当”人不为己天诛地灭“等这些利己主义的话语在我脑海里徜徉时，我又不得不思考自己的人生究竟该怎么去过。</p><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>​    下面我将从感情、工作和做人三方面说明我对狠的理解。</p><p>​    “似她红衣灼灼,白沙大漠绽出曼陀罗。回忆,都斑驳,谁还记得,曾经的许诺”，情殇从古至今都是如此得令人感动与伤感。我也曾像很多人那样，追求所谓的爱情，殊不知，一直活在自己的世界里，连爱的人都是虚幻的。伤过一次又一次，渐渐的开始认清自己所处的世界没有完美，自己也并不完美。白雪公主永远只在童话世界里陪伴着小孩子。而我们终将被世界现实打磨得理性，充斥着主宰生活与被生活主宰的循环中。而这也是我对狠的理解，“抛弃那些天真烂漫的喜欢，回归历经沧桑后的相濡以沫”。历经沧桑的相濡以沫或许在某些人眼中正是爱情，但对我来说这就是狠，狠下心来对待周遭的异性荷尔蒙的诱惑，狠下心来对待自己一颗躁动的内心。</p><p>​    浮躁的心是干不了任何事情的，工作需要的是一颗冷静而不失火热的内心。有这种欲望，才会狠。狠字扮演着的便是做事中，不对自己留有余地，一件事情要么不做，要么不顾一切的做好。说这些话容易，做起来就像当局者迷般迷惘。狠字还要“果敢”，果断勇敢不怕失败，狠起来做事如狼似虎。</p><p>​    最难阐述的或许应该是做人吧，22岁的我，并没有太多人生阅历，但是要说到为不狠买单，我干了不少事。如果当初我当时权衡自己的利益和别人的利益，我果断不会考虑他人利益损害自己。（涉及到一些隐私）虽说中国是人情社会，但是利益永远至上，我想这句话大家没意见吧，如果有人为了情谊放弃利益，那就是利益不够。而且这种趋向越来越明显。做人狠，不是不善良，保持善良确实应该提倡，可是在社会中又有多少人会为你的善良买单，别总妄想着善良就会有人帮，这就是我朋友所说的“人不狠不稳”，你要一直妄想着靠你的善良依靠别人为你的事情买单，那是做梦。每个人都会为了自己而考虑这件事情，很少会有人冒着生命危险去救你这个不相干的人的命。所以，做人嘛，得狠起来，狠了才能立，立了方能直，直了才能有其他。</p><p>​    总结：狠，就是对办事的积极高效，就是对感情的忠贞，对生活，对做人的一种态度。</p><p>ps：我是个对生活、学习、工作、感情总是犹犹豫豫，做的事永远拖泥带水，希望在以后能做一个狠人吧。</p><p>​    </p><p>​    </p><p>​    </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>ES6及ES6+</title>
+      <link href="/2018/10/25/js-answer/"/>
+      <url>/2018/10/25/js-answer/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="ES6及ES6"><a href="#ES6及ES6" class="headerlink" title="ES6及ES6+"></a>ES6及ES6+</h1><h3 id="…args-的用途"><a href="#…args-的用途" class="headerlink" title="[…args]的用途"></a>[…args]的用途</h3><blockquote><ol><li><p>函数声明时使用</p><p>“栗子”：<code>function add([...args]){...}</code></p></li><li><p>收集成数组</p><p>“栗子”：<code>var arr=[1,2,3]</code></p><p>​        <code>function arr_push(){</code></p><p>​            <code>arr.push(4);</code></p><p>​            <code>console.log([...arr])</code>    </p><p>​        <code>//控制台打印出[1,2,3,4]</code>            </p><p>​            <code>}</code></p></li></ol></blockquote><h3 id="对象属性赋值省略的机制"><a href="#对象属性赋值省略的机制" class="headerlink" title="对象属性赋值省略的机制"></a>对象属性赋值省略的机制</h3><blockquote><p>​    由测试可知并不是省略了<code>{x:x}</code>中的<code>:x</code></p><p>​    而是省略了<code>x:</code></p></blockquote><h3 id="object-assign复制对象"><a href="#object-assign复制对象" class="headerlink" title="object.assign复制对象"></a>object.assign复制对象</h3><blockquote><p>​    浅操作，只能复制对象的引用</p><p>​    深拷贝可用JSON下的对象，<code>json.parse(json.stringify(obj))</code></p></blockquote><h6 id="函数简洁表示方法"><a href="#函数简洁表示方法" class="headerlink" title="函数简洁表示方法"></a>函数简洁表示方法</h6><blockquote><p>​    <code>foo:function(){}</code>可表示为<code>foo(){}</code></p><p>​    注：<em>super只能在简洁方法中出现</em></p><p>​        <em>数组深拷贝两种方法：1、<code>arr.slice(0)</code>2、<code>let newArr=arr.concat()</code></em></p></blockquote><p>###JS中基础数据类型&amp;复杂数据类型</p><blockquote><ul><li><p><strong>字符串 数值 布尔类型 null undefined</strong> </p></li><li><p><strong>对象 数组 正则 函数 Map Set</strong></p><p>注：<em>JS中，从变量的存储来看，分为两个地方，栈内存和堆内存。基础数据都存在栈内存</em></p></li></ul></blockquote><h6 id="symbol的妙用"><a href="#symbol的妙用" class="headerlink" title="symbol的妙用"></a>symbol的妙用</h6><blockquote><p>​    <code>symbol.for</code>    看是否存在常量，存在返回此常量，不存在创建此常量    </p><p>​    <code>[symbol.iterator]()</code>创建全新迭代器</p><p><em>当你为对象添加 <code>myObject.toString()</code>方法后，就可以将对象转化为字符串，同样地，当你向任意对象添加 <code>myObject[Symbol.iterator]()</code>方法，就可以用<code>for of</code>遍历这个对象了。</em></p></blockquote><p>###生成器与迭代器的区别</p><blockquote><p>​    生成器包含一个或者多个yeild</p><p>​    迭代器只要是一个iterator就行</p><p><em>问题来了：什么是iterator？名词解释：遍历器，简而言之拥有next方法和done方法的可遍历对象</em></p></blockquote><h3 id="class中的一些禁忌"><a href="#class中的一些禁忌" class="headerlink" title="class中的一些禁忌"></a>class中的一些禁忌</h3><blockquote><ol><li><p>Q:子构造器this应当怎样使用？    </p><p>A:必须先用super，特别在框架中如此使用的时候</p><p>R:创建和初始化是在父构造器中实现的</p></li><li><p>Q：static能在new出来的函数对象中使用吗？</p><p>A：不能</p><p>R：只能定义在class类的函数对象中</p></li></ol></blockquote><h3 id="比较-0和-0"><a href="#比较-0和-0" class="headerlink" title="比较+0和-0"></a>比较+0和-0</h3><blockquote><p>​    ===并不能严格比较+0和-0</p><p>​    应用object.is，<strong>一般情况下用===，性能最高</strong></p><p>​    object.has与object.is方法大致相同，只是不能区分+0和-0，</p><p>​    判断数字用<code>Number.isNaN()</code></p></blockquote><h3 id="数组新增方法"><a href="#数组新增方法" class="headerlink" title="数组新增方法"></a>数组新增方法</h3><blockquote><ol><li><p>Array.from把类数组变为一个真数组</p></li><li><p><code>Array.of(1，2，3，4)</code>把参数1-4变为一个数组</p></li><li><p><code>Array.copyWithin(idx,start,end)</code>从右往左覆盖    ?</p></li><li><p>find/findIndex </p><p>find返回数组中第一个符合条件的元素, findIndex返回索引</p></li><li><p>fill</p><ul><li>数组中的每一个值替换</li><li>范围替换 (val,start,end)</li><li>扩展 [].fill.call({length:3},4);返回<strong>对象</strong>，全是4</li></ul></li><li><p>includes返回boolean值</p></li></ol></blockquote><h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><blockquote><p>​    Define:理解为在一个函数内部的函数。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。</p><p>​    自我理解：一个函数a的内部函数b引用上一层函数的变量i，此函数a返回内部函数b，然后此函数a用外部变量接收，即var c = a()相当于c=function b(){};最后执行c();相当于调用b。</p><p>​    作用：1、本来一个局部函数的局部变量只能由他子层函数使用，现在调用到外部来使用</p><p>​            2、隐藏数据，从而保护数据的隐秘性和提高其安全性</p><p>​            3、在内存中维持一个变量，从而实现变量的全局可操作性，例如框架中的cache缓存就必须用到闭包等等。</p></blockquote><h3 id="Vue中使用sort排序进行过滤时出现以下警告"><a href="#Vue中使用sort排序进行过滤时出现以下警告" class="headerlink" title="Vue中使用sort排序进行过滤时出现以下警告"></a>Vue中使用sort排序进行过滤时出现以下警告</h3><blockquote><p>​    array.sort()会计算这个数组本身，会导致filter重新应用，通过复制数组来排序就不会影响原数组重新触发filter过滤器，新数组改变，最后赋值给filter就能达到效果。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> ES6 </category>
+          
+          <category> Js </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+            <tag> ES6 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>how to publish</title>
+      <link href="/2018/10/24/new/"/>
+      <url>/2018/10/24/new/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> new </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> new </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
+</search>

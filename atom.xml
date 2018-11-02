@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>竹林の风</title>
+  
+  <subtitle>Bamboo-wind</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.zlf1996.xyz/"/>
+  <updated>2018-11-02T19:07:19.411Z</updated>
+  <id>https://www.zlf1996.xyz/</id>
+  
+  <author>
+    <name>lingfeng zhu</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React-router4.0的坑</title>
+    <link href="https://www.zlf1996.xyz/2018/10/31/React-router4.0/"/>
+    <id>https://www.zlf1996.xyz/2018/10/31/React-router4.0/</id>
+    <published>2018-10-31T14:12:32.551Z</published>
+    <updated>2018-11-02T19:07:19.411Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="React" scheme="https://www.zlf1996.xyz/categories/React/"/>
+    
+      <category term="Js" scheme="https://www.zlf1996.xyz/categories/React/Js/"/>
+    
+    
+      <category term="React.js" scheme="https://www.zlf1996.xyz/tags/React-js/"/>
+    
+      <category term="react-router" scheme="https://www.zlf1996.xyz/tags/react-router/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>真实dom</title>
+    <link href="https://www.zlf1996.xyz/2018/10/31/truely-dom/"/>
+    <id>https://www.zlf1996.xyz/2018/10/31/truely-dom/</id>
+    <published>2018-10-31T14:12:32.541Z</published>
+    <updated>2018-11-02T19:10:23.925Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Js" scheme="https://www.zlf1996.xyz/categories/Js/"/>
+    
+    
+      <category term="js" scheme="https://www.zlf1996.xyz/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>狠</title>
+    <link href="https://www.zlf1996.xyz/2018/10/25/casual-literator/"/>
+    <id>https://www.zlf1996.xyz/2018/10/25/casual-literator/</id>
+    <published>2018-10-25T10:27:59.368Z</published>
+    <updated>2018-11-02T19:09:33.492Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.zlf1996.xyz/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="https://www.zlf1996.xyz/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6及ES6+</title>
+    <link href="https://www.zlf1996.xyz/2018/10/25/js-answer/"/>
+    <id>https://www.zlf1996.xyz/2018/10/25/js-answer/</id>
+    <published>2018-10-25T02:26:05.956Z</published>
+    <updated>2018-11-02T19:09:46.553Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="ES6" scheme="https://www.zlf1996.xyz/categories/ES6/"/>
+    
+      <category term="Js" scheme="https://www.zlf1996.xyz/categories/ES6/Js/"/>
+    
+    
+      <category term="js" scheme="https://www.zlf1996.xyz/tags/js/"/>
+    
+      <category term="ES6" scheme="https://www.zlf1996.xyz/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>how to publish</title>
+    <link href="https://www.zlf1996.xyz/2018/10/24/new/"/>
+    <id>https://www.zlf1996.xyz/2018/10/24/new/</id>
+    <published>2018-10-24T15:11:38.046Z</published>
+    <updated>2018-11-02T19:10:01.860Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="new" scheme="https://www.zlf1996.xyz/categories/new/"/>
+    
+    
+      <category term="new" scheme="https://www.zlf1996.xyz/tags/new/"/>
+    
+  </entry>
+  
+</feed>
