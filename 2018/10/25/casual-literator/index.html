@@ -110,7 +110,7 @@
         <div class="logo-name">竹林の风</div>
         <div class="logo-desc">
             
-            blog
+            vue,react,node,python
             
         </div>
     </div>
@@ -549,6 +549,28 @@
     </div>
 
     
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '601174178@qq.com',
+        clientSecret: 'zlf18670699866',
+        repo: 'https://github.com/zlf19960224/zlf19960224.github.io.git',
+        owner: 'zlf19960224',
+        admin: null,
+        id: '2018-10-25T18-27-59',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
 
     
 
@@ -688,7 +710,7 @@ console.log(获取dom)；
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'React,Vue,Node'
         });
 
         // modify the toc link href to support Chinese.
@@ -700,7 +722,7 @@ console.log(获取dom)；
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('React,Vue,Node').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
