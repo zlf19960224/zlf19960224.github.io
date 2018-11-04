@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.zlf1996.xyz/"/>
-  <updated>2018-11-02T19:07:19.411Z</updated>
+  <updated>2018-11-04T13:08:10.218Z</updated>
   <id>https://www.zlf1996.xyz/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数字格式化代码的详细解析</title>
+    <link href="https://www.zlf1996.xyz/2018/11/04/number/"/>
+    <id>https://www.zlf1996.xyz/2018/11/04/number/</id>
+    <published>2018-11-04T13:03:35.185Z</published>
+    <updated>2018-11-04T13:08:10.218Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Vue" scheme="https://www.zlf1996.xyz/categories/Vue/"/>
+    
+      <category term="Js" scheme="https://www.zlf1996.xyz/categories/Vue/Js/"/>
+    
+    
+      <category term="Vue" scheme="https://www.zlf1996.xyz/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>React-router4.0的坑</title>

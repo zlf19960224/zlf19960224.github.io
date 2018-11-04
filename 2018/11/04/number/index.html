@@ -5,11 +5,15 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="React-router4.0的坑, 竹林の风">
-    <meta name="description" content="React-router4.0的坑许久不用react，结果今天上来写个demo，瞬间就在router上挂住了。
+    <meta name="keywords" content="数字格式化代码的详细解析, 竹林の风">
+    <meta name="description" content="####vue小技巧总结：
 
-​    原先的router去掉了，换成（类似redux的provider）BrowserRouter包裹整个项目
-​    ">
+~：图片、CSS变模块引入
+
+@：src目录下
+
+/** enter键：生成函数的参数、返回值以及对应的类型
+1234/** * 创建请求 * @param &amp;#123;string&amp;#125; URL 请求地">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>React-router4.0的坑 | 竹林の风</title>
+    <title>数字格式化代码的详细解析 | 竹林の风</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -252,13 +256,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        React-router4.0的坑
+                        数字格式化代码的详细解析
                     </div>
                 </div>
             </div>
@@ -369,12 +373,8 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/React-js/" target="_blank">
-                    <span class="chip bg-color">React.js</span>
-                </a>
-                
-                <a href="/tags/react-router/" target="_blank">
-                    <span class="chip bg-color">react-router</span>
+                <a href="/tags/Vue/" target="_blank">
+                    <span class="chip bg-color">Vue</span>
                 </a>
                 
             </div>
@@ -384,11 +384,11 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/React/" class="post-category" target="_blank">
-                        React
+                    <a href="/categories/Vue/" class="post-category" target="_blank">
+                        Vue
                     </a>
                     
-                    <a href="/categories/React/Js/" class="post-category" target="_blank">
+                    <a href="/categories/Vue/Js/" class="post-category" target="_blank">
                         Js
                     </a>
                     
@@ -396,37 +396,37 @@
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-10-31
+                    <i class="fa fa-clock-o fa-fw"></i>2018-11-04
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="React-router4-0的坑"><a href="#React-router4-0的坑" class="headerlink" title="React-router4.0的坑"></a>React-router4.0的坑</h3><p>许久不用react，结果今天上来写个demo，瞬间就在router上挂住了。</p>
-<blockquote>
-<p>​    原先的router去掉了，换成（类似redux的provider）BrowserRouter包裹整个项目</p>
-<p>​    like:</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render( &lt;BrowserRouter&gt;</span><br><span class="line">    &lt;App /&gt;</span><br><span class="line">  &lt;/BrowserRouter&gt;, document.getElementById(&apos;root&apos;));</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>​    然后我突然间发现我的二级路由的component并没有显示，于是我再次请求文档，发现自己在“/”路由下写了个exact，exact关键字，这个关键字是将”/“做唯一匹配，否则”/“和”/xxx”都会匹配到path为”/“的路由，制定exact后，”/page1”就不会再匹配到”/“了。不明白的话，可以动手按照我的路由试试。</p>
-</blockquote>
-<p>栗子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;Route exact path=&quot;/&quot;&gt;</span><br><span class="line">  &lt;Route path=&quot;/home&quot; component=&#123;home&#125;/ &gt;</span><br><span class="line">        &#123;/* &lt;Route path=&quot;&quot;&gt;&lt;/Route&gt; */&#125;</span><br><span class="line">&lt;/Route&gt;</span><br></pre></td></tr></table></figure>
-<p>好了，终于按照我的要求出来了！</p>
-<p>于是乎我又去了解了下BrowserRouter又发现了一片新天地：</p>
-<blockquote>
-<p>​    BrowserRouter、HashRouter、MemoryRouter这三类不同的router，react为什么要分三类呢？</p>
-<p>之前的history分为以下三类：</p>
-<ul>
-<li>hashHistory 老版本浏览器的history</li>
-<li>browserHistory h5的history</li>
-<li>memoryHistory node环境下的history，存储在memory中</li>
-</ul>
-<p>4.0之前版本的react-router针对三者分别实现了createHashHistory、createBrowserHistory和create MemoryHistory三个方法来创建三种情况下的history</p>
-</blockquote>
-<p>今天就到这儿吧！晚安~</p>
+                <p>####vue小技巧总结：</p>
+<ol>
+<li><p>~：图片、CSS变模块引入</p>
+</li>
+<li><p>@：src目录下</p>
+</li>
+<li><p>/** enter键：生成函数的参数、返回值以及对应的类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 创建请求</span><br><span class="line"> * @param &#123;string&#125; URL 请求地址</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>大佬一般将文件放一个index和其他的命名moduels，index负责导出这些命名的moduels.</p>
+</li>
+<li><p>数字格式化代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 数字格式化</span><br><span class="line"> *</span><br><span class="line"> * @export</span><br><span class="line"> * @param &#123;any&#125; number 要格式化的数字</span><br><span class="line"> * @param &#123;any&#125; decimals 保留几位小数</span><br><span class="line"> * @param &#123;any&#125; decPoint 小数点符号</span><br><span class="line"> * @param &#123;any&#125; thousandsSep 千分位符号</span><br><span class="line"> * @returns</span><br><span class="line"> */</span><br><span class="line">export function numberFormat (number, decimals, decPoint, thousandsSep) &#123;</span><br><span class="line">  number = (number + &apos;&apos;).replace(/[^0-9+-Ee.]/g, &apos;&apos;);</span><br><span class="line">  let n = !isFinite(+number) ? 0 : +number;</span><br><span class="line">  let prec = !isFinite(+decimals) ? 0 : Math.abs(decimals);</span><br><span class="line">  let sep = typeof thousandsSep === &apos;undefined&apos; ? &apos;,&apos; : thousandsSep;</span><br><span class="line">  let dec = typeof decPoint === &apos;undefined&apos; ? &apos;.&apos; : decPoint;</span><br><span class="line">  let s = &apos;&apos;;</span><br><span class="line">  let toFixedFix = function (n, prec) &#123;</span><br><span class="line">    let k = Math.pow(10, prec);</span><br><span class="line">    return &apos;&apos; + Math.ceil(n * k) / k;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  s = (prec ? toFixedFix(n, prec) : &apos;&apos; + Math.round(n)).split(&apos;.&apos;);</span><br><span class="line">  let re = /(-?\d+)(\d&#123;3&#125;)/;</span><br><span class="line">  while (re.test(s[0])) &#123;</span><br><span class="line">    s[0] = s[0].replace(re, &apos;$1&apos; + sep + &apos;$2&apos;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if ((s[1] || &apos;&apos;).length &lt; prec) &#123;</span><br><span class="line">    s[1] = s[1] || &apos;&apos;;</span><br><span class="line">    s[1] += new Array(prec - s[1].length + 1).join(&apos;0&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">  return s.join(dec);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>数字格式化代码解析：（个人理解）</p>
+<p>​    1.<strong>number+””</strong>将number这个变量铁定变为字符串方便使用replace()函数</p>
+<p>​    2.[/[^0-9+-Ee.]/g]这个正则全局匹配0-9以及E和e，以及数字的正负</p>
+<p>​    3.isFinite()函数判断其是否为有限数值，不是有限数值就为0，是则为+number</p>
+<p>​    4.Math.abs()取绝对值，Math.pow()幂指数，Math.round()四舍五入</p>
+<p>​    5.千分位符号，我特地查了下。。。<strong>千分位形式,即从个位数起,每三位之间加一个逗号,例如,将7654321输出成7,654,321。</strong></p>
+<p>​    6.toFIxedFix函数里，先让k=10^pre;Math.ceil(n*k)/k，保留几位小数与Math.round()后面的区别是当prec存在可以计算数据，不存在返回Math.round()后面数据</p>
+<p>​    7.s=…..split(“,”);得到s为整数部分， let re = /(-?\d+)(\d{3})/;匹配正整数或负整数：比如有负整数-1234，那么\$1-1，\$2=234，-1234567，那么$1=-1234，$2=567。（这句代码还挺难嚼得）</p>
+<p>​    8.s[1]的长度小于prec时就会加0，.join(“0”)同样巧用</p>
+</li>
+</ol>
 
             </div>
             <hr>
@@ -565,7 +565,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.zlf1996.xyz" class="b-link-green">竹林の风</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/10/31/React-router4.0/" class="b-link-green">React-router4.0的坑</a>
+                    <a href="/2018/11/04/number/" class="b-link-green">数字格式化代码的详细解析</a>
                 </p>
             </div>
         </div>
@@ -587,7 +587,7 @@
         repo: 'https://github.com/zlf19960224/zlf19960224.github.io.git',
         owner: 'zlf19960224',
         admin: null,
-        id: '2018-10-31T22-12-32',
+        id: '2018-11-04T21-03-35',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -607,7 +607,7 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2018/11/04/number/">
                     <div class="card-image">
@@ -628,9 +628,9 @@
 /** enter键：生成函数的参数、返回值以及对应的类型
 1234/** * 创建请求 * @param &#123;string&#125; URL 请求地</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -647,6 +647,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -663,23 +664,20 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/10/31/truely-dom/">
+                <a href="/2018/10/31/React-router4.0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="真实dom">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="React-router4.0的坑">
                         
-                        <span class="card-title">真实dom</span>
+                        <span class="card-title">React-router4.0的坑</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">真实dom
-​    e.target|ref,找到真实dom
+                    <div class="summary">React-router4.0的坑许久不用react，结果今天上来写个demo，瞬间就在router上挂住了。
 
-同异步关系
-setState({})异步，console.log()同步不能输出真实dom个数，setState(()=&gt;{
-console.log(获取dom)；
-(</div>
+​    原先的router去掉了，换成（类似redux的provider）BrowserRouter包裹整个项目
+​    </div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-31
@@ -688,7 +686,11 @@ console.log(获取dom)；
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Js/" class="post-category" target="_blank">
+                            <a href="/categories/React/" class="post-category" target="_blank">
+                                    React
+                                </a>
+                            
+                            <a href="/categories/React/Js/" class="post-category" target="_blank">
                                     Js
                                 </a>
                             
@@ -699,8 +701,12 @@ console.log(获取dom)；
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/" target="_blank">
-                        <span class="chip bg-color">js</span>
+                    <a href="/tags/React-js/" target="_blank">
+                        <span class="chip bg-color">React.js</span>
+                    </a>
+                    
+                    <a href="/tags/react-router/" target="_blank">
+                        <span class="chip bg-color">react-router</span>
                     </a>
                     
                 </div>
