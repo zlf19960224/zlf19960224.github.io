@@ -5,10 +5,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="React视频观看总结, 竹林の风">
-    <meta name="description" content="React是组件化的，而Vue是模板与js分离更彻底。
-React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览器中运行）
-12React: React.createElement(&amp;quot;div&amp;quot;,&amp;#123;">
+    <meta name="keywords" content="hybrid初探, 竹林の风">
+    <meta name="description" content="hybrid实现
+​    即客户端与前端和服务器三端的结合
+​    hybrid混合开发app的应用的客户端即是所搭的框架，前端即是app的页面内容，服务器端即是保存和管理前端静态页的server上传等。
+怎么更改app的内容即前端部分">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +17,7 @@ React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>React视频观看总结 | 竹林の风</title>
+    <title>hybrid初探 | 竹林の风</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -251,13 +252,13 @@ React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览�
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        React视频观看总结
+                        hybrid初探
                     </div>
                 </div>
             </div>
@@ -368,8 +369,8 @@ React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览�
             
             <div class="article-tag">
                 
-                <a href="/tags/React/" target="_blank">
-                    <span class="chip bg-color">React</span>
+                <a href="/tags/hybrid/" target="_blank">
+                    <span class="chip bg-color">hybrid</span>
                 </a>
                 
             </div>
@@ -379,8 +380,8 @@ React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览�
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/React/" class="post-category" target="_blank">
-                        React
+                    <a href="/categories/hybrid/" class="post-category" target="_blank">
+                        hybrid
                     </a>
                     
                 </span>
@@ -394,31 +395,14 @@ React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览�
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>React是组件化的，而Vue是模板与js分离更彻底。</p>
-<p>React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览器中运行）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">React: React.createElement(&quot;div&quot;,&#123;key:value&#125;,[...])</span><br><span class="line">Vue: h(&quot;div&quot;,onClick&#123;&#125;...) //代码即为VUE和React的生成虚拟dom的代码.</span><br></pre></td></tr></table></figure>
-<p>React中的patch函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(container,...)这段代码将第一次执行patch函数，即patch(container,vnode),</span><br><span class="line">setState(&#123;...&#125;)这段代码将第二次执行patch函数，即patch(vnode,newVode)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setState(&#123;..&#125;)与vue的this....修改属性同样都是异步</span><br></pre></td></tr></table></figure>
-<h3 id="为什么要是异步："><a href="#为什么要是异步：" class="headerlink" title="为什么要是异步："></a>为什么要是异步：</h3><blockquote>
-<ol>
-<li>函数是要给外界众多人用的，可以改变多次，用异步更优化性能</li>
-<li>同名属性的修改不用向用户展示过程，只用展示结果</li>
-</ol>
+                <h3 id="hybrid实现"><a href="#hybrid实现" class="headerlink" title="hybrid实现"></a>hybrid实现</h3><blockquote>
+<p>​    即客户端与前端和服务器三端的结合</p>
+<p>​    hybrid混合开发app的应用的客户端即是所搭的框架，前端即是app的页面内容，服务器端即是保存和管理前端静态页的server上传等。</p>
+<h5 id="怎么更改app的内容即前端部分？"><a href="#怎么更改app的内容即前端部分？" class="headerlink" title="怎么更改app的内容即前端部分？"></a>怎么更改app的内容即前端部分？</h5><p>答：通过自定义的版本号来定其是否应该更新</p>
+<h5 id="为什么要用hybird而不用H5？"><a href="#为什么要用hybird而不用H5？" class="headerlink" title="为什么要用hybird而不用H5？"></a>为什么要用hybird而不用H5？</h5><p>答：1.hybird是通过file协议，而h5是通过https协议。file协议相对于http协议更快。</p>
+<p>2.更新迭代速度更快</p>
 </blockquote>
-<h3 id="什么是组件化"><a href="#什么是组件化" class="headerlink" title="什么是组件化"></a>什么是组件化</h3><blockquote>
-<ol>
-<li>组件的封装</li>
-<li>组件的复用</li>
-</ol>
-</blockquote>
-<h3 id="React与VUE的技术选型"><a href="#React与VUE的技术选型" class="headerlink" title="React与VUE的技术选型"></a>React与VUE的技术选型</h3><blockquote>
-<ol>
-<li>Vue更适合模板与js分离，React更适合组件化</li>
-<li>Vue更适合小中型公司，学习成本相对不高，并且拿来直接用，生态圈也广，并且适合国内发展（个人理解）</li>
-<li>React更适合大型公司的组件化开发，更适合复用</li>
-</ol>
-</blockquote>
+<p>体验虽然抵不上NA，但是上述两点有点足以让很多app都用hybrid，一般肉眼也看不清。</p>
 
             </div>
             <hr>
@@ -557,7 +541,7 @@ React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览�
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.zlf1996.xyz" class="b-link-green">竹林の风</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/08/React-video-collect/" class="b-link-green">React视频观看总结</a>
+                    <a href="/2018/11/08/hybrid-first/" class="b-link-green">hybrid初探</a>
                 </p>
             </div>
         </div>
@@ -579,7 +563,7 @@ React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览�
         repo: 'https://github.com/zlf19960224/zlf19960224.github.io.git',
         owner: 'zlf19960224',
         admin: null,
-        id: '2018-11-08T16-32-59',
+        id: '2018-11-08T17-06-55',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -599,7 +583,7 @@ React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览�
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2018/11/08/hybrid-first/">
                     <div class="card-image">
@@ -616,9 +600,9 @@ React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览�
 ​    hybrid混合开发app的应用的客户端即是所搭的框架，前端即是app的页面内容，服务器端即是保存和管理前端静态页的server上传等。
 怎么更改app的内容即前端部分</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -631,6 +615,7 @@ React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览�
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -647,38 +632,29 @@ React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览�
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/11/04/number/">
+                <a href="/2018/11/08/React-video-collect/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="数字格式化代码的详细解析">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="React视频观看总结">
                         
-                        <span class="card-title">数字格式化代码的详细解析</span>
+                        <span class="card-title">React视频观看总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">###vue小技巧总结：
-
-~：图片、CSS变模块引入
-
-@：src目录下
-
-/** enter键：生成函数的参数、返回值以及对应的类型
-1234/** * 创建请求 * @param &#123;string&#125; URL 请求地址</div>
+                    <div class="summary">React是组件化的，而Vue是模板与js分离更彻底。
+React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览器中运行）
+12React: React.createElement(&quot;div&quot;,&#123;</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-04
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Vue/" class="post-category" target="_blank">
-                                    Vue
-                                </a>
-                            
-                            <a href="/categories/Vue/Js/" class="post-category" target="_blank">
-                                    Js
+                            <a href="/categories/React/" class="post-category" target="_blank">
+                                    React
                                 </a>
                             
                             
@@ -688,8 +664,8 @@ React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vue/" target="_blank">
-                        <span class="chip bg-color">Vue</span>
+                    <a href="/tags/React/" target="_blank">
+                        <span class="chip bg-color">React</span>
                     </a>
                     
                 </div>
