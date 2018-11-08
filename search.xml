@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>React视频观看总结</title>
+      <link href="/2018/11/08/React-video-collect/"/>
+      <url>/2018/11/08/React-video-collect/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>React是组件化的，而Vue是模板与js分离更彻底。</p><p>React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览器中运行）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">React: React.createElement(&quot;div&quot;,&#123;key:value&#125;,[...])</span><br><span class="line">Vue: h(&quot;div&quot;,onClick&#123;&#125;...) //代码即为VUE和React的生成虚拟dom的代码.</span><br></pre></td></tr></table></figure><p>React中的patch函数：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(container,...)这段代码将第一次执行patch函数，即patch(container,vnode),</span><br><span class="line">setState(&#123;...&#125;)这段代码将第二次执行patch函数，即patch(vnode,newVode)</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setState(&#123;..&#125;)与vue的this....修改属性同样都是异步</span><br></pre></td></tr></table></figure><h3 id="为什么要是异步："><a href="#为什么要是异步：" class="headerlink" title="为什么要是异步："></a>为什么要是异步：</h3><blockquote><ol><li>函数是要给外界众多人用的，可以改变多次，用异步更优化性能</li><li>同名属性的修改不用向用户展示过程，只用展示结果</li></ol></blockquote><h3 id="什么是组件化"><a href="#什么是组件化" class="headerlink" title="什么是组件化"></a>什么是组件化</h3><blockquote><ol><li>组件的封装</li><li>组件的复用</li></ol></blockquote><h3 id="React与VUE的技术选型"><a href="#React与VUE的技术选型" class="headerlink" title="React与VUE的技术选型"></a>React与VUE的技术选型</h3><blockquote><ol><li>Vue更适合模板与js分离，React更适合组件化</li><li>Vue更适合小中型公司，学习成本相对不高，并且拿来直接用，生态圈也广，并且适合国内发展（个人理解）</li><li>React更适合大型公司的组件化开发，更适合复用</li></ol></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> React </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> React </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>数字格式化代码的详细解析</title>
       <link href="/2018/11/04/number/"/>
       <url>/2018/11/04/number/</url>
