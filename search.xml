@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>hybrid初探</title>
+      <link href="/2018/11/08/hybrid-first/"/>
+      <url>/2018/11/08/hybrid-first/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="hybrid实现"><a href="#hybrid实现" class="headerlink" title="hybrid实现"></a>hybrid实现</h3><blockquote><p>​    即客户端与前端和服务器三端的结合</p><p>​    hybrid混合开发app的应用的客户端即是所搭的框架，前端即是app的页面内容，服务器端即是保存和管理前端静态页的server上传等。</p><h5 id="怎么更改app的内容即前端部分？"><a href="#怎么更改app的内容即前端部分？" class="headerlink" title="怎么更改app的内容即前端部分？"></a>怎么更改app的内容即前端部分？</h5><p>答：通过自定义的版本号来定其是否应该更新</p><h5 id="为什么要用hybird而不用H5？"><a href="#为什么要用hybird而不用H5？" class="headerlink" title="为什么要用hybird而不用H5？"></a>为什么要用hybird而不用H5？</h5><p>答：1.hybird是通过file协议，而h5是通过https协议。file协议相对于http协议更快。</p><p>2.更新迭代速度更快</p></blockquote><p>体验虽然抵不上NA，但是上述两点有点足以让很多app都用hybrid，一般肉眼也看不清。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hybrid </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hybrid </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>React视频观看总结</title>
       <link href="/2018/11/08/React-video-collect/"/>
       <url>/2018/11/08/React-video-collect/</url>
