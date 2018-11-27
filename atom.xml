@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.zlf1996.xyz/"/>
-  <updated>2018-11-08T09:06:39.066Z</updated>
+  <updated>2018-11-27T08:16:10.587Z</updated>
   <id>https://www.zlf1996.xyz/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>移动端项目总结</title>
+    <link href="https://www.zlf1996.xyz/2018/11/27/yidongduan/"/>
+    <id>https://www.zlf1996.xyz/2018/11/27/yidongduan/</id>
+    <published>2018-11-27T08:14:06.867Z</published>
+    <updated>2018-11-27T08:16:10.587Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="移动端,Vue" scheme="https://www.zlf1996.xyz/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF-Vue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>hybrid初探</title>
     <link href="https://www.zlf1996.xyz/2018/11/08/hybrid-first/"/>
     <id>https://www.zlf1996.xyz/2018/11/08/hybrid-first/</id>
-    <published>2018-11-08T09:06:55.057Z</published>
-    <updated>2018-11-08T09:06:39.066Z</updated>
+    <published>2018-11-08T09:06:55.056Z</published>
+    <updated>2018-11-08T09:06:39.065Z</updated>
     
     <summary type="html">
     
@@ -72,7 +96,7 @@
     <title>数字格式化代码的详细解析</title>
     <link href="https://www.zlf1996.xyz/2018/11/04/number/"/>
     <id>https://www.zlf1996.xyz/2018/11/04/number/</id>
-    <published>2018-11-04T13:03:35.185Z</published>
+    <published>2018-11-04T13:03:35.184Z</published>
     <updated>2018-11-04T13:16:13.112Z</updated>
     
     <summary type="html">
@@ -101,7 +125,7 @@
     <link href="https://www.zlf1996.xyz/2018/10/31/React-router4.0/"/>
     <id>https://www.zlf1996.xyz/2018/10/31/React-router4.0/</id>
     <published>2018-10-31T14:12:32.551Z</published>
-    <updated>2018-11-02T19:07:19.411Z</updated>
+    <updated>2018-11-02T19:07:19.410Z</updated>
     
     <summary type="html">
     
@@ -156,8 +180,8 @@
     <title>狠</title>
     <link href="https://www.zlf1996.xyz/2018/10/25/casual-literator/"/>
     <id>https://www.zlf1996.xyz/2018/10/25/casual-literator/</id>
-    <published>2018-10-25T10:27:59.368Z</published>
-    <updated>2018-11-02T19:09:33.492Z</updated>
+    <published>2018-10-25T10:27:59.367Z</published>
+    <updated>2018-11-02T19:09:33.491Z</updated>
     
     <summary type="html">
     
@@ -182,8 +206,8 @@
     <title>ES6及ES6+</title>
     <link href="https://www.zlf1996.xyz/2018/10/25/js-answer/"/>
     <id>https://www.zlf1996.xyz/2018/10/25/js-answer/</id>
-    <published>2018-10-25T02:26:05.956Z</published>
-    <updated>2018-11-02T19:09:46.553Z</updated>
+    <published>2018-10-25T02:26:05.955Z</published>
+    <updated>2018-11-02T19:09:46.552Z</updated>
     
     <summary type="html">
     
