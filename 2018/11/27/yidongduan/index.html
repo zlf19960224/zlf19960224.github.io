@@ -5,11 +5,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="hybrid初探, 竹林の风">
-    <meta name="description" content="hybrid实现
-​    即客户端与前端和服务器三端的结合
-​    hybrid混合开发app的应用的客户端即是所搭的框架，前端即是app的页面内容，服务器端即是保存和管理前端静态页的server上传等。
-怎么更改app的内容即前端部分">
+    <meta name="keywords" content="移动端项目总结, 竹林の风">
+    <meta name="description" content="下面说一些我在写移动端项目时总结的经验：
+
+我们知道移动端click点击事件有300s延迟，为了正常使用click，需引入1在main.js编写如下代码：
+
+import fastClick from ‘fastclick’fastClic">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>hybrid初探 | 竹林の风</title>
+    <title>移动端项目总结 | 竹林の风</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -252,13 +253,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        hybrid初探
+                        移动端项目总结
                     </div>
                 </div>
             </div>
@@ -369,40 +370,55 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/hybrid/" target="_blank">
-                    <span class="chip bg-color">hybrid</span>
+                <a href="/tags/移动端-Vue/" target="_blank">
+                    <span class="chip bg-color">移动端,Vue</span>
                 </a>
                 
             </div>
             
             <div class="post-info">
                 
-                <span class="post-cate">
-                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                    
-                    <a href="/categories/hybrid/" class="post-category" target="_blank">
-                        hybrid
-                    </a>
-                    
-                </span>
-                
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-11-08
+                    <i class="fa fa-clock-o fa-fw"></i>2018-11-27
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="hybrid实现"><a href="#hybrid实现" class="headerlink" title="hybrid实现"></a>hybrid实现</h3><blockquote>
-<p>​    即客户端与前端和服务器三端的结合</p>
-<p>​    hybrid混合开发app的应用的客户端即是所搭的框架，前端即是app的页面内容，服务器端即是保存和管理前端静态页的server上传等。</p>
-<h5 id="怎么更改app的内容即前端部分？"><a href="#怎么更改app的内容即前端部分？" class="headerlink" title="怎么更改app的内容即前端部分？"></a>怎么更改app的内容即前端部分？</h5><p>答：通过自定义的版本号来定其是否应该更新</p>
-<h5 id="为什么要用hybird而不用H5？"><a href="#为什么要用hybird而不用H5？" class="headerlink" title="为什么要用hybird而不用H5？"></a>为什么要用hybird而不用H5？</h5><p>答：1.hybird是通过file协议，而h5是通过https协议。file协议相对于http协议更快。</p>
-<p>2.更新迭代速度更快</p>
-</blockquote>
-<p>体验虽然抵不上NA，但是上述两点有点足以让很多app都用hybrid，一般肉眼也看不清。</p>
+                <p>下面说一些我在写移动端项目时总结的经验：</p>
+<ul>
+<li>我们知道移动端click点击事件有300s延迟，为了正常使用click，需引入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在main.js编写如下代码：</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>import fastClick from ‘fastclick’<br>fastClick.attach(document.body)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 低版本安卓浏览器打开一片白</span><br></pre></td></tr></table></figure></p>
+<p>import ‘babel-polyfill’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 轮播图、横向滑动tab、图片放大滑动等这些使用```vue-awesome-swiper```插件</span><br></pre></td></tr></table></figure></p>
+<p>import VueAwesomeSwiper from ‘vue-awesome-swiper’<br>import ‘swiper/dist/css/swiper.css’<br>Vue.use(VueAwesomeSwiper)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">具体使用场景需参照文档配置```option```选项，这里不再赘述。</span><br><span class="line">下面只阐述一点就是我们在使用插件时常常需要更改样式，比如改变轮播图下面小圆点的颜色。这里我们推荐使用**样式穿透**：</span><br><span class="line">  ```/deep/ ```是```sass```和```less```的样式穿透</span><br><span class="line">  ```&gt;&gt;&gt;```是```stylus```的样式穿透</span><br></pre></td></tr></table></figure></p>
+<p> .wrapper &gt;&gt;&gt; .swiper-pagination-bullet-active<br>    background: #fff<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">.wrapper  /deep/ .swiper-pagination-bullet-active &#123;</span><br><span class="line">    background: #fff</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>当我们要引入不是其本文件跟目录下的 css 文件时，记得使用<figure class="highlight plain"><figcaption><span>```来简化``` './../../....'```这些相对路径。或者使用```'~路径别名'```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">@import &apos;./../../../assets/css/mixin.scss&apos;;</span><br><span class="line">//简化成功</span><br><span class="line">@import &apos;~@/assets/css/mixin.scss&apos;;</span><br><span class="line">@import &apos;~styles/varibles.scss&apos;</span><br></pre></td></tr></table></figure></p>
+</li>
+<li><p>css常用相同模块内容可以提mixin提供多处使用，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@mixin omit &#123;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  text-overflow: ellipsis;</span><br><span class="line">  white-space: nowrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>然后通过<code>@include</code>来调用具有相同名称的mixin模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">　@include omit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>在css里面，<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 可以进行提前占位，避免资源加载时候的闪烁</span><br><span class="line">2. 还可以让高度自适应</span><br><span class="line">在移动端或者在响应式开发情况下，我们可以利用这个特性来实现图片等比例缩放自适应。</span><br><span class="line">解决核心思想为：提供一个容器，设置容器的高度为0，再设置padding-bottom为56.25%（需要自适应的元素高度除以宽度*100%）（因为padding的百分比是按照容器宽度计算的，所以由padding来撑开容器高度，而不是height，保证了容器的宽高比例）</span><br></pre></td></tr></table></figure></li>
+</ul>
+<div class="wrapper"><br>  <img class="swiper-img"><br></div>
+
+<p>.wrapper {<br>    overflow: hidden<br>    width: 100%<br>    height: 0<br>    padding-bottom: 31.25%<br>}<br>.swiper-img {<br>    width: 100%<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*  移动端页面当滑动到底部时，路由跳转后发现页面还是保持在底部，这里可以在router中配置</span><br></pre></td></tr></table></figure></p>
+<p>scrollBehavior (to, from, savedPosition) {<br>    return { x: 0, y: 0 }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* 项目打包后，manifest.js可以理解为webpack打包生成的配置文件， vendor.js各个页面各个组件公用的一些代码，app.js放的是项目各个页面的业务逻辑代码。**app.js至少超过1M的时候才使用异步组件**</span><br><span class="line">* 使用keep-alive时有两个钩子函数:</span><br><span class="line">![877cd98ea39d2dcdce0918a0d9073d6.png](https://upload-images.jianshu.io/upload_images/5120924-9c48bbd34ef6b3e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br></pre></td></tr></table></figure></p>
+<p>mounted () {<br>    this.lastCity = this.city<br>    this.getHomeInfo()   //ajax请求<br>  },<br>  activated () {<br>    if (this.lastCity !== this.city) {<br>      this.lastCity = this.city<br>      this.getHomeInfo()<br>    }<br>  }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 有一个移动端很常见的效果，当滑动右边部分的时候，左边会联动显示与当前内容相符合的标题高亮，当点击左边某一个标题的时候，右边会自动滑动到相应的内容。**左右联动效果**，可以通过```better-scroll```这个插件实现。另外，**横向滚动的导航栏**、**竖向滚动的列表**都可以通过这个插件来实现。</span><br></pre></td></tr></table></figure></p>
+<p><template><br>    <!--定义外层--><br>    <div class="wrapper" ref="wrapper"><br>        <!--定义需要滚动的内容区域--><br>        <ul class="content"><br>            <li v-for="item in items"></li><br>        </ul><br>    </div><br></template></p>
+<p><script><br>  import BScroll from ‘better-scroll’<br>  export default {<br>    mounted() {<br>      this.$nextTick(() =&gt; {<br>        this.scroll = new Bscroll(this.$refs.wrapper, {})<br>      })<br>    },<br>   watch: {<br>     letter () {<br>       if (this.letter) {<br>        const element = this.$refs[this.letter][0]<br>        this.scroll.scrollToElement(element)<br>      }<br>    }<br>   },<br>  }<br></script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">样式这里需要注意的是，要滚动的这一部分给了固定的高度，且超出部分```overflow:hidden;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &#123;</span><br><span class="line">    overflow: hidden</span><br><span class="line">    position: absolute</span><br><span class="line">    top: 1.58rem</span><br><span class="line">    left: 0</span><br><span class="line">    right: 0</span><br><span class="line">    bottom: 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外附上better-scroll原作者的文章：<a href="https://www.imooc.com/article/18232" target="_blank" rel="noopener">https://www.imooc.com/article/18232</a></p>
+<ul>
+<li>我们做好的项目，如何在移动端进行调试呢？<br>我们发现，vue项目是用webpack-dev-server这个服务器跑起来的，这个服务器默认外部是无法访问的，需在package.json中加入<figure class="highlight plain"><figcaption><span>0.0.0.0```才行：</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">更改后的配置如下：</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>“scripts”: {<br>    “dev”: “webpack-dev-server –host 0.0.0.0 –inline –progress –config build/webpack.dev.conf.js”,<br>  },<br><code>这样的话，在命令行运行</code> ipconfig<code>`</code>，手机和电脑连接同一局域网，用手机访问电脑的ip地址就可以用真机打开啦</p>
 
             </div>
             <hr>
@@ -541,7 +557,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.zlf1996.xyz" class="b-link-green">竹林の风</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/08/hybrid-first/" class="b-link-green">hybrid初探</a>
+                    <a href="/2018/11/27/yidongduan/" class="b-link-green">移动端项目总结</a>
                 </p>
             </div>
         </div>
@@ -563,7 +579,7 @@
         repo: 'https://github.com/zlf19960224/zlf19960224.github.io.git',
         owner: 'zlf19960224',
         admin: null,
-        id: '2018-11-08T17-06-55',
+        id: '2018-11-27T16-14-06',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -583,7 +599,7 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2018/11/27/yidongduan/">
                     <div class="card-image">
@@ -601,9 +617,9 @@
 
 import fastClick from ‘fastclick’fastClic</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -612,6 +628,7 @@ import fastClick from ‘fastclick’fastClic</div>
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -628,19 +645,20 @@ import fastClick from ‘fastclick’fastClic</div>
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/11/08/React-video-collect/">
+                <a href="/2018/11/08/hybrid-first/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="React视频观看总结">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="hybrid初探">
                         
-                        <span class="card-title">React视频观看总结</span>
+                        <span class="card-title">hybrid初探</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">React是组件化的，而Vue是模板与js分离更彻底。
-React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览器中运行）
-12React: React.createElement(&quot;div&quot;,&#123;</div>
+                    <div class="summary">hybrid实现
+​    即客户端与前端和服务器三端的结合
+​    hybrid混合开发app的应用的客户端即是所搭的框架，前端即是app的页面内容，服务器端即是保存和管理前端静态页的server上传等。
+怎么更改app的内容即前端部分</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-08
@@ -649,8 +667,8 @@ React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览�
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/React/" class="post-category" target="_blank">
-                                    React
+                            <a href="/categories/hybrid/" class="post-category" target="_blank">
+                                    hybrid
                                 </a>
                             
                             
@@ -660,8 +678,8 @@ React用的是JSX标准（JSX为语法糖，需要被解析成js才能在浏览�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/React/" target="_blank">
-                        <span class="chip bg-color">React</span>
+                    <a href="/tags/hybrid/" target="_blank">
+                        <span class="chip bg-color">hybrid</span>
                     </a>
                     
                 </div>
