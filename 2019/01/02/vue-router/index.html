@@ -5,12 +5,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="移动端项目总结, 竹林の风">
-    <meta name="description" content="下面说一些我在写移动端项目时总结的经验：
-
-我们知道移动端click点击事件有300s延迟，为了正常使用click，需引入1在main.js编写如下代码：
-
-import fastClick from ‘fastclick’fastClic">
+    <meta name="keywords" content="竹林の风">
+    <meta name="description" content="###vue-router的路由守卫的钩子函数：
+123456//按照顺序的钩子函数beforeEach(to,from,next)&amp;#123;&amp;#125;,//全局beforeEnter(to,from,next)&amp;#123;&amp;#125;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +15,7 @@ import fastClick from ‘fastclick’fastClic">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>移动端项目总结 | 竹林の风</title>
+    <title>竹林の风</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -253,13 +250,13 @@ import fastClick from ‘fastclick’fastClic">
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        移动端项目总结
+                        
                     </div>
                 </div>
             </div>
@@ -368,57 +365,33 @@ import fastClick from ‘fastclick’fastClic">
     <div class="card">
         <div class="card-content article-info">
             
-            <div class="article-tag">
-                
-                <a href="/tags/移动端-Vue/" target="_blank">
-                    <span class="chip bg-color">移动端,Vue</span>
-                </a>
-                
-            </div>
-            
             <div class="post-info">
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-11-27
+                    <i class="fa fa-clock-o fa-fw"></i>2019-01-02
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>下面说一些我在写移动端项目时总结的经验：</p>
-<ul>
-<li>我们知道移动端click点击事件有300s延迟，为了正常使用click，需引入<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在main.js编写如下代码：</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>import fastClick from ‘fastclick’<br>fastClick.attach(document.body)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 低版本安卓浏览器打开一片白</span><br></pre></td></tr></table></figure></p>
-<p>import ‘babel-polyfill’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 轮播图、横向滑动tab、图片放大滑动等这些使用```vue-awesome-swiper```插件</span><br></pre></td></tr></table></figure></p>
-<p>import VueAwesomeSwiper from ‘vue-awesome-swiper’<br>import ‘swiper/dist/css/swiper.css’<br>Vue.use(VueAwesomeSwiper)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">具体使用场景需参照文档配置```option```选项，这里不再赘述。</span><br><span class="line">下面只阐述一点就是我们在使用插件时常常需要更改样式，比如改变轮播图下面小圆点的颜色。这里我们推荐使用**样式穿透**：</span><br><span class="line">  ```/deep/ ```是```sass```和```less```的样式穿透</span><br><span class="line">  ```&gt;&gt;&gt;```是```stylus```的样式穿透</span><br></pre></td></tr></table></figure></p>
-<p> .wrapper &gt;&gt;&gt; .swiper-pagination-bullet-active<br>    background: #fff<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">.wrapper  /deep/ .swiper-pagination-bullet-active &#123;</span><br><span class="line">    background: #fff</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><p>当我们要引入不是其本文件跟目录下的 css 文件时，记得使用<figure class="highlight plain"><figcaption><span>```来简化``` './../../....'```这些相对路径。或者使用```'~路径别名'```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">@import &apos;./../../../assets/css/mixin.scss&apos;;</span><br><span class="line">//简化成功</span><br><span class="line">@import &apos;~@/assets/css/mixin.scss&apos;;</span><br><span class="line">@import &apos;~styles/varibles.scss&apos;</span><br></pre></td></tr></table></figure></p>
-</li>
-<li><p>css常用相同模块内容可以提mixin提供多处使用，如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@mixin omit &#123;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  text-overflow: ellipsis;</span><br><span class="line">  white-space: nowrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>然后通过<code>@include</code>来调用具有相同名称的mixin模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">　@include omit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>在css里面，<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 可以进行提前占位，避免资源加载时候的闪烁</span><br><span class="line">2. 还可以让高度自适应</span><br><span class="line">在移动端或者在响应式开发情况下，我们可以利用这个特性来实现图片等比例缩放自适应。</span><br><span class="line">解决核心思想为：提供一个容器，设置容器的高度为0，再设置padding-bottom为56.25%（需要自适应的元素高度除以宽度*100%）（因为padding的百分比是按照容器宽度计算的，所以由padding来撑开容器高度，而不是height，保证了容器的宽高比例）</span><br></pre></td></tr></table></figure></li>
-</ul>
-<div class="wrapper"><br>  <img class="swiper-img"><br></div>
-
-<p>.wrapper {<br>    overflow: hidden<br>    width: 100%<br>    height: 0<br>    padding-bottom: 31.25%<br>}<br>.swiper-img {<br>    width: 100%<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*  移动端页面当滑动到底部时，路由跳转后发现页面还是保持在底部，这里可以在router中配置</span><br></pre></td></tr></table></figure></p>
-<p>scrollBehavior (to, from, savedPosition) {<br>    return { x: 0, y: 0 }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* 项目打包后，manifest.js可以理解为webpack打包生成的配置文件， vendor.js各个页面各个组件公用的一些代码，app.js放的是项目各个页面的业务逻辑代码。**app.js至少超过1M的时候才使用异步组件**</span><br><span class="line">* 使用keep-alive时有两个钩子函数:</span><br><span class="line">![877cd98ea39d2dcdce0918a0d9073d6.png](https://upload-images.jianshu.io/upload_images/5120924-9c48bbd34ef6b3e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br></pre></td></tr></table></figure></p>
-<p>mounted () {<br>    this.lastCity = this.city<br>    this.getHomeInfo()   //ajax请求<br>  },<br>  activated () {<br>    if (this.lastCity !== this.city) {<br>      this.lastCity = this.city<br>      this.getHomeInfo()<br>    }<br>  }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 有一个移动端很常见的效果，当滑动右边部分的时候，左边会联动显示与当前内容相符合的标题高亮，当点击左边某一个标题的时候，右边会自动滑动到相应的内容。**左右联动效果**，可以通过```better-scroll```这个插件实现。另外，**横向滚动的导航栏**、**竖向滚动的列表**都可以通过这个插件来实现。</span><br></pre></td></tr></table></figure></p>
-<p><template><br>    <!--定义外层--><br>    <div class="wrapper" ref="wrapper"><br>        <!--定义需要滚动的内容区域--><br>        <ul class="content"><br>            <li v-for="item in items"></li><br>        </ul><br>    </div><br></template></p>
-<p><script><br>  import BScroll from ‘better-scroll’<br>  export default {<br>    mounted() {<br>      this.$nextTick(() =&gt; {<br>        this.scroll = new Bscroll(this.$refs.wrapper, {})<br>      })<br>    },<br>   watch: {<br>     letter () {<br>       if (this.letter) {<br>        const element = this.$refs[this.letter][0]<br>        this.scroll.scrollToElement(element)<br>      }<br>    }<br>   },<br>  }<br></script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">样式这里需要注意的是，要滚动的这一部分给了固定的高度，且超出部分```overflow:hidden;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &#123;</span><br><span class="line">    overflow: hidden</span><br><span class="line">    position: absolute</span><br><span class="line">    top: 1.58rem</span><br><span class="line">    left: 0</span><br><span class="line">    right: 0</span><br><span class="line">    bottom: 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>另外附上better-scroll原作者的文章：<a href="https://www.imooc.com/article/18232" target="_blank" rel="noopener">https://www.imooc.com/article/18232</a></p>
-<ul>
-<li>我们做好的项目，如何在移动端进行调试呢？<br>我们发现，vue项目是用webpack-dev-server这个服务器跑起来的，这个服务器默认外部是无法访问的，需在package.json中加入<figure class="highlight plain"><figcaption><span>0.0.0.0```才行：</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">更改后的配置如下：</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>“scripts”: {<br>    “dev”: “webpack-dev-server –host 0.0.0.0 –inline –progress –config build/webpack.dev.conf.js”,<br>  },<br><code>这样的话，在命令行运行</code> ipconfig<code>`</code>，手机和电脑连接同一局域网，用手机访问电脑的ip地址就可以用真机打开啦</p>
+                <p>###vue-router的路由守卫的钩子函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//按照顺序的钩子函数</span><br><span class="line">beforeEach(to,from,next)&#123;&#125;,//全局</span><br><span class="line">beforeEnter(to,from,next)&#123;&#125;,//路由里面定义</span><br><span class="line">beforeRouteEach(to,from,next)&#123;&#125;,//组件</span><br><span class="line">beforeResolve(to,from,next)&#123;&#125;,//全局</span><br><span class="line">afterEach(to,from)&#123;&#125;//全局</span><br></pre></td></tr></table></figure>
+<h3 id="额外的钩子函数"><a href="#额外的钩子函数" class="headerlink" title="额外的钩子函数"></a>额外的钩子函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteUpdate(to,from,next)&#123;&#125;,//组件</span><br><span class="line">beforeRouteLeave(to,from,next)&#123;&#125;//组件</span><br></pre></td></tr></table></figure>
+<p>next()中可为next(“/“)或者next({path:”/“})</p>
+<h3 id="路由元信息"><a href="#路由元信息" class="headerlink" title="路由元信息"></a>路由元信息</h3><p>定义路由的时候可以配置meta字段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">meta:&#123;</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="keep-alive"><a href="#keep-alive" class="headerlink" title="keep-alive"></a>keep-alive</h3><p>可使路由缓存，从而保存数据。上面的meta中可设置keep-alive定义其缓存与否。</p>
+<h3 id="import优化性能"><a href="#import优化性能" class="headerlink" title="import优化性能"></a>import优化性能</h3><p>路由懒加载，需下载syntax-dynamic-import插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const _import_ = file =&gt; () =&gt; import(&apos;@/views/&apos; + file + &apos;.vue&apos;)</span><br></pre></td></tr></table></figure>
+<h3 id="滚动行为"><a href="#滚动行为" class="headerlink" title="滚动行为"></a>滚动行为</h3><p>​    一般用以下代码滚动行为不会影响下一个路由</p>
+<blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</span><br><span class="line">&gt;   <span class="keyword">if</span> (savedPosition) &#123;</span><br><span class="line">&gt;     <span class="keyword">return</span> savedPosition</span><br><span class="line">&gt;   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">&gt;     <span class="keyword">return</span> &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span> &#125;</span><br><span class="line">&gt;   &#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h3><blockquote>
+<p>to.params.id,from.params.id….</p>
+</blockquote>
 
             </div>
             <hr>
@@ -557,7 +530,7 @@ import fastClick from ‘fastclick’fastClic">
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.zlf1996.xyz" class="b-link-green">竹林の风</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/27/yidongduan/" class="b-link-green">移动端项目总结</a>
+                    <a href="/2019/01/02/vue-router/" class="b-link-green"></a>
                 </p>
             </div>
         </div>
@@ -579,7 +552,7 @@ import fastClick from ‘fastclick’fastClic">
         repo: 'https://github.com/zlf19960224/zlf19960224.github.io.git',
         owner: 'zlf19960224',
         admin: null,
-        id: '2018-11-27T16-14-06',
+        id: '2019-01-02T20-38-34',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -599,7 +572,7 @@ import fastClick from ‘fastclick’fastClic">
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2019/01/02/vue-router/">
                     <div class="card-image">
@@ -614,9 +587,45 @@ import fastClick from ‘fastclick’fastClic">
                     <div class="summary">###vue-router的路由守卫的钩子函数：
 123456//按照顺序的钩子函数beforeEach(to,from,next)&#123;&#125;,//全局beforeEnter(to,from,next)&#123;&#125;</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-02
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            lingfeng zhu
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/11/27/yidongduan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="移动端项目总结">
+                        
+                        <span class="card-title">移动端项目总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">下面说一些我在写移动端项目时总结的经验：
+
+我们知道移动端click点击事件有300s延迟，为了正常使用click，需引入1在main.js编写如下代码：
+
+import fastClick from ‘fastclick’fastClic</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -626,48 +635,10 @@ import fastClick from ‘fastclick’fastClic">
                     </div>
                 </div>
                 
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
-            <div class="card">
-                <a href="/2018/11/08/hybrid-first/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="hybrid初探">
-                        
-                        <span class="card-title">hybrid初探</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">hybrid实现
-​    即客户端与前端和服务器三端的结合
-​    hybrid混合开发app的应用的客户端即是所搭的框架，前端即是app的页面内容，服务器端即是保存和管理前端静态页的server上传等。
-怎么更改app的内容即前端部分</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-08
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/hybrid/" class="post-category" target="_blank">
-                                    hybrid
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hybrid/" target="_blank">
-                        <span class="chip bg-color">hybrid</span>
+                    <a href="/tags/移动端-Vue/" target="_blank">
+                        <span class="chip bg-color">移动端,Vue</span>
                     </a>
                     
                 </div>
