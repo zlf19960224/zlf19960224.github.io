@@ -5,9 +5,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="vue-router, 竹林の风">
-    <meta name="description" content="###vue-router的路由守卫的钩子函数：
-123456//按照顺序的钩子函数beforeEach(to,from,next)&amp;#123;&amp;#125;,//全局beforeEnter(to,from,next)&amp;#123;&amp;#125;">
+    <meta name="keywords" content="js常用设计模式, 竹林の风">
+    <meta name="description" content="中介者模式中介者的功能就是封装对象之间的交互。如果一个对象的操作会引起其他相关对象的变化，而这个对象又不希望自己来处理这些关系，那么就可以去找中介者，让它来处理这些麻烦的关系。 
+享元模式享元模式要求将对象的属性划分为内部状态与外部状态（状">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>vue-router | 竹林の风</title>
+    <title>js常用设计模式 | 竹林の风</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -250,13 +250,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        vue-router
+                        js常用设计模式
                     </div>
                 </div>
             </div>
@@ -367,8 +367,8 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/Vue/" target="_blank">
-                    <span class="chip bg-color">-Vue</span>
+                <a href="/tags/Js/" target="_blank">
+                    <span class="chip bg-color">Js</span>
                 </a>
                 
             </div>
@@ -378,37 +378,80 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/Vue/" class="post-category" target="_blank">
-                        -Vue
+                    <a href="/categories/设计模式/" class="post-category" target="_blank">
+                        设计模式
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-01-02
+                    <i class="fa fa-clock-o fa-fw"></i>2019-02-12
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>###vue-router的路由守卫的钩子函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//按照顺序的钩子函数</span><br><span class="line">beforeEach(to,from,next)&#123;&#125;,//全局</span><br><span class="line">beforeEnter(to,from,next)&#123;&#125;,//路由里面定义</span><br><span class="line">beforeRouteEach(to,from,next)&#123;&#125;,//组件</span><br><span class="line">beforeResolve(to,from,next)&#123;&#125;,//全局</span><br><span class="line">afterEach(to,from)&#123;&#125;//全局</span><br></pre></td></tr></table></figure>
-<h3 id="额外的钩子函数"><a href="#额外的钩子函数" class="headerlink" title="额外的钩子函数"></a>额外的钩子函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteUpdate(to,from,next)&#123;&#125;,//组件</span><br><span class="line">beforeRouteLeave(to,from,next)&#123;&#125;//组件</span><br></pre></td></tr></table></figure>
-<p>next()中可为next(“/“)或者next({path:”/“})</p>
-<h3 id="路由元信息"><a href="#路由元信息" class="headerlink" title="路由元信息"></a>路由元信息</h3><p>定义路由的时候可以配置meta字段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">meta:&#123;</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="keep-alive"><a href="#keep-alive" class="headerlink" title="keep-alive"></a>keep-alive</h3><p>可使路由缓存，从而保存数据。上面的meta中可设置keep-alive定义其缓存与否。</p>
-<h3 id="import优化性能"><a href="#import优化性能" class="headerlink" title="import优化性能"></a>import优化性能</h3><p>路由懒加载，需下载syntax-dynamic-import插件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const _import_ = file =&gt; () =&gt; import(&apos;@/views/&apos; + file + &apos;.vue&apos;)</span><br></pre></td></tr></table></figure>
-<h3 id="滚动行为"><a href="#滚动行为" class="headerlink" title="滚动行为"></a>滚动行为</h3><p>​    一般用以下代码滚动行为不会影响下一个路由</p>
+                <h3 id="中介者模式"><a href="#中介者模式" class="headerlink" title="中介者模式"></a>中介者模式</h3><p><strong>中介者的功能就是封装对象之间的交互。如果一个对象的操作会引起其他相关对象的变化，而这个对象又不希望自己来处理这些关系，那么就可以去找中介者，让它来处理这些麻烦的关系。</strong> </p>
+<h3 id="享元模式"><a href="#享元模式" class="headerlink" title="享元模式"></a>享元模式</h3><p><strong>享元模式要求将对象的属性划分为内部状态与外部状态（状态在这里通常指属性）。享元模式的目标是尽量减少共享对象的数量，关于如何划分内部状态和外部状态</strong>，下面的几条经验提供了一些指引</p>
+<p>　&gt;　1、内部状态存储于对象内部。<br>　&gt;<br>　&gt;　2、内部状态可以被一些对象共享。<br>　&gt;<br>　&gt;　3、内部状态独立于具体的场景，通常不会改变。<br>　&gt;<br>　&gt;　4、外部状态取决于具体的场景，并根据场景而变化，外部状态不能被共享</p>
+<h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><blockquote>
+<p>​    代理（proxy）是一个对象，它可以用来控制对另外一个对象的访问；</p>
+<p>​    代理对象和本体对象实现了同样的接口，并且会把任何方法调用传递给本体对象；</p>
+</blockquote>
+<p> <strong>与装饰者模式的区别</strong></p>
 <blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</span><br><span class="line">&gt;   <span class="keyword">if</span> (savedPosition) &#123;</span><br><span class="line">&gt;     <span class="keyword">return</span> savedPosition</span><br><span class="line">&gt;   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">&gt;     <span class="keyword">return</span> &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span> &#125;</span><br><span class="line">&gt;   &#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<p>​    相同之处：都要对其他对象进行包装，都要事先与被包装对象相同的接口，而且都要把方法调用传递给被包装的对象。</p>
+<pre><code>不同之处：一是装饰者会对被包装对象的功能进行修改或扩充，但是代理只不过是控制对它的访问；二是被包装对象的创建方式上：装饰者模式被包装对象的实例化过程完全是独立的，而在代理模式中，被包装对象的实例化是代理的实例化过程的一部分。
+</code></pre></blockquote>
+<h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><p><strong>只存在一个</strong></p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; singleton.getInstance = function(name) &#123;</span><br><span class="line">&gt;   if (!this.instance) &#123;</span><br><span class="line">&gt;     // 关键语句</span><br><span class="line">&gt;     this.instance = new Singleton(name);</span><br><span class="line">&gt;   &#125;</span><br><span class="line">&gt;   return this.instance;</span><br><span class="line">&gt; &#125;;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h3 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h3><blockquote>
-<p>to.params.id,from.params.id….</p>
+<h3 id="发布订阅模式-观察者模式"><a href="#发布订阅模式-观察者模式" class="headerlink" title="发布订阅模式(观察者模式)"></a>发布订阅模式(观察者模式)</h3><p> 　　<strong>发布—订阅模式，也就是常说的观察者模式，它的优点非常明显，一为时间上的解耦，二为对象之间的解耦。应用也非常广泛，既可以用在异步编程中，也可以帮助完成更松耦合的代码编写。发布—订阅模式还可以用来帮助实现一些别的设计模式，比如中介者模式。从架构上来看，无论是MVC还是MVVM，都少不了发布—订阅模式的参与，而且javascript本身也是一门基于事件驱动的语言</strong> </p>
+<h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><p><strong>用来对方法调用进行参数化处理和传送，经过这样处理过的方法调用可以在任何需要的时候执行。也就是说该模式旨在将函数的调用、请求和操作封装成一个单一的对象，然后对这个对象进行一些列的处理。他也可以用来消除调用操作的对象和实现操作的对象之间的耦合。这为各种具体的类的更换带来了极大的灵活性。</strong></p>
+<p> 模式作用：</p>
+<blockquote>
+<p>1、将函数的封装、请求、调用结合为一体</p>
+<p>2、调用具体的函数解耦命令对象与接收对象</p>
+<p>3、提高程序模块化的灵活性</p>
 </blockquote>
+<h3 id="模板方法类"><a href="#模板方法类" class="headerlink" title="模板方法类"></a>模板方法类</h3><p><strong>模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。</strong></p>
+<h3 id="状态模式"><a href="#状态模式" class="headerlink" title="状态模式"></a>状态模式</h3><p><strong>状态模式定义一个对象，这个对象可以通过管理其状态从而使得应用程序作出相应的变化。状态模式是一个非常常用的设计模式，它主要有两个角色组成： </strong></p>
+<blockquote>
+<p>（1）环境类：拥有一个状态成员，可以修改其状态并作出相应反应。</p>
+<p> （2）状态类：表示一种状态，包含其相应的处理方法 </p>
+</blockquote>
+<h3 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h3><p><strong>定义一系列算法，把他们一个一个封装起来，并且使他们可以相互替换(具有相同的目标和意图)</strong></p>
+<blockquote>
+<p>策略模式的优点:</p>
+<p>​    1.策略模式利用组合、委托和多态等技术和思想，可以有效地避免多重条件选择语句　</p>
+<p>​    2.策略模式提供了对开放-封闭原则的完美支持，将算法封装在独立的 strategy 中，使得它们易于切换，易于理解，易于扩展</p>
+<p>策略模式的缺点:　　</p>
+<p>​    1.会在程序中增加许多策略类或者策略对象，但实际上比把他们负责的逻辑堆砌在 Context 中要好　</p>
+<p>​    2.使用策略模式，必须了解所有的策略，才能更好的选择一个合适的策略</p>
+</blockquote>
+<h3 id="职责链模式"><a href="#职责链模式" class="headerlink" title="职责链模式"></a>职责链模式</h3><p><strong>责任链接模式又称职责链模式，是一种对象的行为模式；它是一种链式结构，每个节点都有可能两种操作，要么处理该请求停止该请求操作，要么把请求转发到下一个节点，让下一个节点来处理请求；该模式定义了一些可能的处理请求的节点对象，请求的起点跟顺序都可能不一样，处理的节点根据请求的不一样而不同；请求者不必知道数据处理完成是由谁来操作的，内部是一个黑箱的操作过程，这是它的一个核心内容；</strong></p>
+<h3 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h3><p><strong>在不改变对象自身的基础上，在程序运行期间给对象动态地添加一些额外职责 </strong></p>
+<blockquote>
+<p>​    缺点：</p>
+<ul>
+<li>超类子类强耦合，超类改变导致子类改变</li>
+<li>超类内部细节对子类可见，破坏了封装性</li>
+<li>完成功能复用同时，可能会创造大量子类</li>
+</ul>
+</blockquote>
+<h3 id="迭代器模式"><a href="#迭代器模式" class="headerlink" title="迭代器模式"></a>迭代器模式</h3><p><strong>提供一种方法顺序一个聚合对象中各个元素，而又不暴露该对象内部表示。 </strong></p>
+<blockquote>
+<p>​    特点：</p>
+<ul>
+<li>访问一个聚合对象的内容而无需暴露它的内部表示。</li>
+<li>为遍历不同的集合结构提供一个统一的接口，从而支持同样的算法在不同的集合结构上进行操作。</li>
+<li>遍历的同时更改迭代器所在的集合结构可能会导致问题（比如C#的foreach里不允许修改item）。</li>
+</ul>
+</blockquote>
+<h3 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h3><p><strong>将一个类（对象）的接口（方法或者属性）转化成另外一个接口以满足用户需求，使类（对象）之间接口的不兼容问题通过适配器得以解决。 </strong></p>
 
             </div>
             <hr>
@@ -547,7 +590,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.zlf1996.xyz" class="b-link-green">竹林の风</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/01/02/vue-router/" class="b-link-green">vue-router</a>
+                    <a href="/2019/02/12/jsDesignMode/" class="b-link-green">js常用设计模式</a>
                 </p>
             </div>
         </div>
@@ -569,7 +612,7 @@
         repo: 'https://github.com/zlf19960224/zlf19960224.github.io.git',
         owner: 'zlf19960224',
         admin: null,
-        id: '2019-01-02T20-38-34',
+        id: '2019-02-12T18-42-49',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -591,22 +634,72 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2019/02/12/directive/">
+                <a href="/2019/02/12/offer&&nginx/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="自定义指令">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="剑指offe遇到的问题与nginx配置">
                         
-                        <span class="card-title">自定义指令</span>
+                        <span class="card-title">剑指offe遇到的问题与nginx配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">自定义指令全局组件
-1234567Vue.directive(&apos;focus&apos;, &#123;  // 当被绑定的元素插入到 DOM 中时……  inserted: function (el) &#123;    // 聚</div>
+                    <div class="summary">map 要return
+map要return
+map 要return
+map 要return
+
+forEach中的return与for循环的return 不一样！！！for 循环里面 return 可以直接终止 跳出 循环
+forEach </div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-12
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/nginx/" class="post-category" target="_blank">
+                                    nginx
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/nginx/" target="_blank">
+                        <span class="chip bg-color">nginx</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2019/02/12/ECMstudying/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="ECM管理员端实习打卡系统">
+                        
+                        <span class="card-title">ECM管理员端实习打卡系统</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">ECM端管理员实习生打卡系统的学习历程
+用xlsx库导出：
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -624,49 +717,6 @@
                     
                     <a href="/tags/Vue/" target="_blank">
                         <span class="chip bg-color">Vue</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
-            <div class="card">
-                <a href="/2018/11/27/yidongduan/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="移动端项目总结">
-                        
-                        <span class="card-title">移动端项目总结</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">下面说一些我在写移动端项目时总结的经验：
-
-我们知道移动端click点击事件有300s延迟，为了正常使用click，需引入1在main.js编写如下代码：
-
-import fastClick from ‘fastclick’fastClic</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-27
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            lingfeng zhu
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/移动端-Vue/" target="_blank">
-                        <span class="chip bg-color">移动端,Vue</span>
                     </a>
                     
                 </div>
