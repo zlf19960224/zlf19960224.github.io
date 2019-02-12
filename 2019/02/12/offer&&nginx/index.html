@@ -5,9 +5,14 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="vue-router, 竹林の风">
-    <meta name="description" content="###vue-router的路由守卫的钩子函数：
-123456//按照顺序的钩子函数beforeEach(to,from,next)&amp;#123;&amp;#125;,//全局beforeEnter(to,from,next)&amp;#123;&amp;#125;">
+    <meta name="keywords" content="剑指offe遇到的问题与nginx配置, 竹林の风">
+    <meta name="description" content="map 要return
+map要return
+map 要return
+map 要return
+
+forEach中的return与for循环的return 不一样！！！for 循环里面 return 可以直接终止 跳出 循环
+forEach ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>vue-router | 竹林の风</title>
+    <title>剑指offe遇到的问题与nginx配置 | 竹林の风</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -250,13 +255,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        vue-router
+                        剑指offe遇到的问题与nginx配置
                     </div>
                 </div>
             </div>
@@ -367,8 +372,8 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/Vue/" target="_blank">
-                    <span class="chip bg-color">-Vue</span>
+                <a href="/tags/nginx/" target="_blank">
+                    <span class="chip bg-color">nginx</span>
                 </a>
                 
             </div>
@@ -378,37 +383,39 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/Vue/" class="post-category" target="_blank">
-                        -Vue
+                    <a href="/categories/nginx/" class="post-category" target="_blank">
+                        nginx
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-01-02
+                    <i class="fa fa-clock-o fa-fw"></i>2019-02-12
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>###vue-router的路由守卫的钩子函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//按照顺序的钩子函数</span><br><span class="line">beforeEach(to,from,next)&#123;&#125;,//全局</span><br><span class="line">beforeEnter(to,from,next)&#123;&#125;,//路由里面定义</span><br><span class="line">beforeRouteEach(to,from,next)&#123;&#125;,//组件</span><br><span class="line">beforeResolve(to,from,next)&#123;&#125;,//全局</span><br><span class="line">afterEach(to,from)&#123;&#125;//全局</span><br></pre></td></tr></table></figure>
-<h3 id="额外的钩子函数"><a href="#额外的钩子函数" class="headerlink" title="额外的钩子函数"></a>额外的钩子函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteUpdate(to,from,next)&#123;&#125;,//组件</span><br><span class="line">beforeRouteLeave(to,from,next)&#123;&#125;//组件</span><br></pre></td></tr></table></figure>
-<p>next()中可为next(“/“)或者next({path:”/“})</p>
-<h3 id="路由元信息"><a href="#路由元信息" class="headerlink" title="路由元信息"></a>路由元信息</h3><p>定义路由的时候可以配置meta字段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">meta:&#123;</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="keep-alive"><a href="#keep-alive" class="headerlink" title="keep-alive"></a>keep-alive</h3><p>可使路由缓存，从而保存数据。上面的meta中可设置keep-alive定义其缓存与否。</p>
-<h3 id="import优化性能"><a href="#import优化性能" class="headerlink" title="import优化性能"></a>import优化性能</h3><p>路由懒加载，需下载syntax-dynamic-import插件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const _import_ = file =&gt; () =&gt; import(&apos;@/views/&apos; + file + &apos;.vue&apos;)</span><br></pre></td></tr></table></figure>
-<h3 id="滚动行为"><a href="#滚动行为" class="headerlink" title="滚动行为"></a>滚动行为</h3><p>​    一般用以下代码滚动行为不会影响下一个路由</p>
-<blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; scrollBehavior (to, <span class="keyword">from</span>, savedPosition) &#123;</span><br><span class="line">&gt;   <span class="keyword">if</span> (savedPosition) &#123;</span><br><span class="line">&gt;     <span class="keyword">return</span> savedPosition</span><br><span class="line">&gt;   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">&gt;     <span class="keyword">return</span> &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span> &#125;</span><br><span class="line">&gt;   &#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h3 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h3><blockquote>
-<p>to.params.id,from.params.id….</p>
-</blockquote>
+                <h3 id="map-要return"><a href="#map-要return" class="headerlink" title="map 要return"></a>map 要return</h3><ol>
+<li>map要return</li>
+<li>map 要return</li>
+<li>map 要return</li>
+</ol>
+<h3 id="forEach中的return与for循环的return-不一样！！！"><a href="#forEach中的return与for循环的return-不一样！！！" class="headerlink" title="forEach中的return与for循环的return 不一样！！！"></a>forEach中的return与for循环的return 不一样！！！</h3><p>for 循环里面 return 可以直接终止 跳出 循环</p>
+<p>forEach 是中断本次循环 直接 下一个循环 forEach想要取到值之后 直接跳出循环 可以用 try catch</p>
+<p>let arr = [0, 1, 2, 3, 4, 5, 6]<br>try{<br>arr.forEach((item) =&gt; {<br>if (item === 3) {<br>throw ‘Jump out now!’//在这里抛出异常<br>}<br>console.log(item)<br>})<br>} catch (e) {<br>console.log(e)<br>}</p>
+<h1 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h1><ol>
+<li><p>nginx要用任务管理器关闭 或者 用 ps -ef|grep nginx，kill -QUIT 进程号</p>
+</li>
+<li><p>nginx配置：前端配置时，sever_name为127.0.0.1</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location  ^~ /api/ &#123;</span><br><span class="line">            proxy_pass  http://ip:port/;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>注：<strong><a href="http://ip:port后面必须加/" target="_blank" rel="noopener">http://ip:port后面必须加/</a></strong></p>
+</li>
+</ol>
+<p>基本上这样项目就能跑起来了</p>
 
             </div>
             <hr>
@@ -547,7 +554,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.zlf1996.xyz" class="b-link-green">竹林の风</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/01/02/vue-router/" class="b-link-green">vue-router</a>
+                    <a href="/2019/02/12/offer&&nginx/" class="b-link-green">剑指offe遇到的问题与nginx配置</a>
                 </p>
             </div>
         </div>
@@ -569,7 +576,7 @@
         repo: 'https://github.com/zlf19960224/zlf19960224.github.io.git',
         owner: 'zlf19960224',
         admin: null,
-        id: '2019-01-02T20-38-34',
+        id: '2019-02-12T18-42-49',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -589,41 +596,47 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
-                <a href="/2019/02/12/directive/">
+                <a href="/2019/02/12/offer&&nginx/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="自定义指令">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="剑指offe遇到的问题与nginx配置">
                         
-                        <span class="card-title">自定义指令</span>
+                        <span class="card-title">剑指offe遇到的问题与nginx配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">自定义指令全局组件
-1234567Vue.directive(&apos;focus&apos;, &#123;  // 当被绑定的元素插入到 DOM 中时……  inserted: function (el) &#123;    // 聚</div>
+                    <div class="summary">map 要return
+map要return
+map 要return
+map 要return
+
+forEach中的return与for循环的return 不一样！！！for 循环里面 return 可以直接终止 跳出 循环
+forEach </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Vue/" class="post-category" target="_blank">
-                                    Vue
+                            <a href="/categories/nginx/" class="post-category" target="_blank">
+                                    nginx
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vue/" target="_blank">
-                        <span class="chip bg-color">Vue</span>
+                    <a href="/tags/nginx/" target="_blank">
+                        <span class="chip bg-color">nginx</span>
                     </a>
                     
                 </div>
@@ -635,29 +648,30 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/11/27/yidongduan/">
+                <a href="/2019/02/12/jsDesignMode/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="移动端项目总结">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="js常用设计模式">
                         
-                        <span class="card-title">移动端项目总结</span>
+                        <span class="card-title">js常用设计模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">下面说一些我在写移动端项目时总结的经验：
-
-我们知道移动端click点击事件有300s延迟，为了正常使用click，需引入1在main.js编写如下代码：
-
-import fastClick from ‘fastclick’fastClic</div>
+                    <div class="summary">中介者模式中介者的功能就是封装对象之间的交互。如果一个对象的操作会引起其他相关对象的变化，而这个对象又不希望自己来处理这些关系，那么就可以去找中介者，让它来处理这些麻烦的关系。 
+享元模式享元模式要求将对象的属性划分为内部状态与外部状态（状</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-27
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-12
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            lingfeng zhu
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/设计模式/" class="post-category" target="_blank">
+                                    设计模式
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -665,8 +679,8 @@ import fastClick from ‘fastclick’fastClic</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/移动端-Vue/" target="_blank">
-                        <span class="chip bg-color">移动端,Vue</span>
+                    <a href="/tags/Js/" target="_blank">
+                        <span class="chip bg-color">Js</span>
                     </a>
                     
                 </div>
