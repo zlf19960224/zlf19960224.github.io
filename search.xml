@@ -3,6 +3,52 @@
   
     
     <entry>
+      <title>2019-plan</title>
+      <link href="/2019/02/24/2019-plan/"/>
+      <url>/2019/02/24/2019-plan/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="新年计划"><a href="#新年计划" class="headerlink" title="新年计划"></a>新年计划</h3><blockquote><ol><li>看50本书</li><li>写博客</li><li>瘦20斤</li><li>进互联网大厂实习</li></ol></blockquote><p>受之前的一个朋友的启发，我打算今年看50本书，以下是我整理的书单。（参考豆瓣）</p><p>第一步要看的便是豆瓣2018年最火的1.《失踪的孩子》，看评论前，我曾经自大的以为自己能对人性有所了解，看完评论，我深刻感受到人生的沧桑，以及生而为人的悲哀，同时又感受到悬崖勒马的庆幸。具体还是看完再写吧。</p><p>2.《今日简史》，3.《人类简史》，4.《未来简史》</p><ol start="5"><li>《情感s勒索》</li><li>《我要快乐，不必正常》</li><li>《极简》</li><li>《刷新》萨提亚·纳德拉</li><li>《一只特立独行的猪》王小波</li><li>《变量》何帆</li><li>《我们三》杨绛</li></ol><p>之后会加</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> plan </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> plan </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>第四范式前端面试题错题（牛客网）</title>
+      <link href="/2019/02/24/answer-dsfs/"/>
+      <url>/2019/02/24/answer-dsfs/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="第四范式前端面试题错题（牛客网）"><a href="#第四范式前端面试题错题（牛客网）" class="headerlink" title="第四范式前端面试题错题（牛客网）"></a>第四范式前端面试题错题（牛客网）</h3><blockquote><ol><li>W3C标准盒模型中，默认情况下块元素的总宽度为</li></ol><p>content，此题考查W3C与IE盒模型的区别，</p><p>W3C的块元素的总宽度指块元素的内容宽度而不是指的盒子宽度。即为content。</p><p>而IE盒模型块元素的总宽度就等于content+2*padding+2*border</p><ol start="2"><li><p>通用选择器（*）、子选择器（&gt;）、相邻选择器（+）、同胞选择器（~）、权重值为0</p></li><li><p><strong>箭头函数不能当构造器使用</strong></p></li><li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt;    compute(10,100)</span><br><span class="line">&gt;    var compute=function(A,B)&#123;</span><br><span class="line">&gt;        console.info(A*B)</span><br><span class="line">&gt;    &#125;</span><br><span class="line">&gt;    function compute(A,B)&#123;</span><br><span class="line">&gt;        console.info(A+B)</span><br><span class="line">&gt;    &#125;</span><br><span class="line">&gt;    function compute(A,B)&#123;</span><br><span class="line">&gt;        console.info((A+B)*2)</span><br><span class="line">&gt;    &#125;</span><br><span class="line">&gt;    compute(2,10)</span><br><span class="line">&gt;    //220,20</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></li></ol></blockquote><blockquote><p>   20的问题是如下原因 </p>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;    var compute;</span><br><span class="line">&gt;    funtion compute(A,B)&#123;</span><br><span class="line">&gt;        console.info(A+B)</span><br><span class="line">&gt;    &#125;</span><br><span class="line">&gt;    function compute(A,B)&#123;</span><br><span class="line">&gt;        console.info((A+B)*2)</span><br><span class="line">&gt;    &#125;</span><br><span class="line">&gt;    compute = function(A,B)&#123;</span><br><span class="line">&gt;        console.info(A*B)</span><br><span class="line">&gt;    &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></blockquote><blockquote><ol start="5"><li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;    var arr = [];</span><br><span class="line">&gt;    console.log(typeof arr, Object.prototype.toString.call(arr))</span><br><span class="line">&gt;    </span><br><span class="line">&gt;    Object,[Object,Array]</span><br><span class="line">&gt;    </span><br><span class="line">&gt;    let arr=[1,2,3]</span><br><span class="line">&gt;    </span><br><span class="line">&gt;    Array.toString(arr)与Object.prototype.toString.call(arr)</span><br><span class="line">&gt;    </span><br><span class="line">&gt;    &quot;1,2,3&quot;,[Object,Array]</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></li></ol></blockquote><blockquote><ol start="6"><li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt;    let a = &#123;</span><br><span class="line">&gt;    </span><br><span class="line">&gt;    age: undefined,</span><br><span class="line">&gt;    </span><br><span class="line">&gt;    jobs: function() &#123;&#125;,</span><br><span class="line">&gt;    </span><br><span class="line">&gt;    name: &apos;yck&apos;</span><br><span class="line">&gt;    </span><br><span class="line">&gt;    &#125;</span><br><span class="line">&gt;    </span><br><span class="line">&gt;    let b = JSON.parse(JSON.stringify(a))</span><br><span class="line">&gt;    </span><br><span class="line">&gt;    console.log(b)//&#123;name: &quot;yck&quot;&#125;</span><br><span class="line">&gt;    //undefined用JSON.stringify时不会拷贝的</span><br><span class="line">&gt;    </span><br><span class="line">&gt;    //object.assign()不会将null，undefined忽略([继承属性和不可枚举属性是不能拷贝的])</span><br><span class="line">&gt;    </span><br><span class="line">&gt;    //object.assign拷贝的是属性值</span><br><span class="line">&gt;    </span><br><span class="line">&gt;    //object.assign()不会深拷贝二维数组或者对象里的对象即无法实现真正意义上的深拷贝</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></li></ol></blockquote><blockquote></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -面试题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>剑指offe遇到的问题与nginx配置</title>
       <link href="/2019/02/12/offer&amp;&amp;nginx/"/>
       <url>/2019/02/12/offer&amp;&amp;nginx/</url>
