@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>前端面试题2</title>
+      <link href="/2019/02/24/answer-qdtx/"/>
+      <url>/2019/02/24/answer-qdtx/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前端如何优化网站性能"><a href="#前端如何优化网站性能" class="headerlink" title="前端如何优化网站性能"></a>前端如何优化网站性能</h3><p>自己的总结：</p><blockquote><ol><li><code>js,css</code>压缩后发布</li><li>减少<code>dom</code>重排（<code>reflow</code>）</li><li><code>css sprites</code></li><li>使用图片懒加载</li><li>减少<code>http</code>请求，即<code>ajax</code></li></ol></blockquote><p>别人的总结</p><blockquote><ol><li>减少<code>http</code>请求</li><li>控制资源文件加载优先级—<code>css</code>在头部，<code>js</code>在底部</li><li>利用浏览器缓存</li><li>减少重排</li><li>减少<code>dom</code>操作</li></ol></blockquote><h3 id="网页从输入网址到渲染完成经历了哪些过程"><a href="#网页从输入网址到渲染完成经历了哪些过程" class="headerlink" title="网页从输入网址到渲染完成经历了哪些过程"></a>网页从输入网址到渲染完成经历了哪些过程</h3><p>7步：</p><blockquote><ol><li>输入网址</li><li>发送到<code>DNS</code>服务器，解析域名对应的<code>IP</code>地址</li><li>与web服务器建立TCP连接</li><li>浏览器向web发送HTTP请求</li><li>web服务器响应请求，并返回数据</li><li>浏览器下载数据解析html源文件</li><li>生成<code>dom</code>树，解析<code>css和js</code>，渲染页面</li></ol></blockquote><h3 id="写React-Vue项目时为什么要在组件中写key，其作用是什么"><a href="#写React-Vue项目时为什么要在组件中写key，其作用是什么" class="headerlink" title="写React/Vue项目时为什么要在组件中写key，其作用是什么"></a>写React/Vue项目时为什么要在组件中写key，其作用是什么</h3><p>答：key的作用是为了在diff算法执行时更快的找到对应的节点，提高diff速度。</p><h3 id="解析-39-1-39-39-2-39-39-3-39-map-parseInt"><a href="#解析-39-1-39-39-2-39-39-3-39-map-parseInt" class="headerlink" title="解析[&#39;1&#39;,&#39;2&#39;,&#39;3&#39;].map(parseInt)"></a>解析<code>[&#39;1&#39;,&#39;2&#39;,&#39;3&#39;].map(parseInt)</code></h3><p>答案<code>[1,NaN,NaN]</code></p><p>map函数第一个参数callback，一共接受三个参数，第一个参数带包当前被处理的元素，第二个参数代表该元素的索引</p><p><code>parseInt(string,radix)</code>，string处理值，radix是解析的基数</p><p><code>parseInt(&#39;1&#39;,0)</code>,radix为0时，且string参数不以‘0x’,’0’开头时，按照十进制处理，这时候返回1</p><p><code>parseInt(&#39;2&#39;,1)</code>,1进制，最大值小于2，无法解析，返回NaN;</p><p><code>parseInt(&#39;3&#39;,2)</code>，同上理</p><p>map返回的是一个数组</p><h3 id="什么是防抖和节流？有什么区别？如何实现"><a href="#什么是防抖和节流？有什么区别？如何实现" class="headerlink" title="什么是防抖和节流？有什么区别？如何实现"></a>什么是防抖和节流？有什么区别？如何实现</h3><p><strong>防抖</strong>：触发高频事件后N秒内函数只会执行一次，如果N秒内高频事件载此触发，则重新计算时间</p><p>实现方法：每次触发事件时并且在取消之前延时调用</p><p><strong>节流</strong>：高频事件触发，但在n秒内只会执行一次，所以节流会稀释函数的执行频率</p><p>实现方法：每次触发是按时都判断当前是否有等待执行的延时函数</p><h3 id="介绍下Set、Map、WeakSet和WeakMap的区别？"><a href="#介绍下Set、Map、WeakSet和WeakMap的区别？" class="headerlink" title="介绍下Set、Map、WeakSet和WeakMap的区别？"></a>介绍下Set、Map、WeakSet和WeakMap的区别？</h3><p>Set:</p><p>·成员唯一、无序且不重复</p><p>·只有键值没有键名（键值和键名一样）</p><p>·可以遍历，方法有：add、delete、has</p><p><code>WeakSet</code>（不是很懂成员为对象的意思）</p><p>·成员都是<strong>对象</strong></p><p>·成员都是<strong>弱引用</strong>，可以被垃圾回收机制回收，可以用来保存DOM节点，不容易造成内存泄露</p><p>`<strong>不能遍历</strong>，方法有：add、delete、has</p><p>Map</p><p>·本质上时键值对的集合，类似集合；</p><p>·可以遍历，方法很多，可以跟各种数据格式转换</p><p><code>WeakMap</code>(这个暂时没弄明白，等以后接触了再彻底弄明白)</p><h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p><code>async</code>和<code>promise</code>中的代码是立即执行的，即同步的</p><p>await和then，catch是异步的</p><h3 id="将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组"><a href="#将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组" class="headerlink" title="将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组"></a>将数组扁平化并去除其中重复数据，最终得到一个升序且不重复的数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Array.from(new Set(arr.flat(Infinity))).sort((a,b)=&gt;&#123;</span><br><span class="line">    return a-b;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>flat是<code>es6</code>新出来的，Array.from是将其中的set对象转换为真正数组</p><p>字符串和 Set 结构都具有 Iterator 接口，因此可以被<code>Array.from</code>转为真正的数组。</p><h3 id="谈谈你对TCP三次握手和四次挥手的理解"><a href="#谈谈你对TCP三次握手和四次挥手的理解" class="headerlink" title="谈谈你对TCP三次握手和四次挥手的理解"></a>谈谈你对TCP三次握手和四次挥手的理解</h3><p>从上到下分别是：</p><h5 id="7-应用层-Application"><a href="#7-应用层-Application" class="headerlink" title="7.应用层(Application)"></a>7.应用层(Application)</h5><h5 id="6-表示层-Presentation"><a href="#6-表示层-Presentation" class="headerlink" title="6.表示层(Presentation)"></a>6.表示层(Presentation)</h5><h5 id="5-会话层-Session"><a href="#5-会话层-Session" class="headerlink" title="5.会话层(Session)"></a>5.会话层(Session)</h5><h5 id="4-传输层-Transport-，tcp的所在"><a href="#4-传输层-Transport-，tcp的所在" class="headerlink" title="4.传输层(Transport)，tcp的所在"></a>4.传输层(Transport)，tcp的所在</h5><h5 id="3-网络层-Network-–-路由器ip"><a href="#3-网络层-Network-–-路由器ip" class="headerlink" title="3.网络层(Network)    – 路由器ip"></a>3.网络层(Network)    – 路由器ip</h5><h5 id="2-数据链路层-Data-Link-–-交换机"><a href="#2-数据链路层-Data-Link-–-交换机" class="headerlink" title="2.数据链路层(Data Link) – 交换机"></a>2.数据链路层(Data Link) – 交换机</h5><h5 id="1-物理层-Physical-–-网卡、集线器（Hub）"><a href="#1-物理层-Physical-–-网卡、集线器（Hub）" class="headerlink" title="1.物理层(Physical) – 网卡、集线器（Hub）"></a>1.物理层(Physical) – 网卡、集线器（Hub）</h5>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>2019-plan</title>
       <link href="/2019/02/24/2019-plan/"/>
       <url>/2019/02/24/2019-plan/</url>
