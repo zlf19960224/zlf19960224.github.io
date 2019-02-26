@@ -446,10 +446,10 @@ css sprites
 <p><code>parseInt(&#39;2&#39;,1)</code>,1进制，最大值小于2，无法解析，返回NaN;</p>
 <p><code>parseInt(&#39;3&#39;,2)</code>，同上理</p>
 <p>map返回的是一个数组</p>
-<h3 id="什么是防抖和节流？有什么区别？如何实现"><a href="#什么是防抖和节流？有什么区别？如何实现" class="headerlink" title="什么是防抖和节流？有什么区别？如何实现"></a>什么是防抖和节流？有什么区别？如何实现</h3><p><strong>防抖</strong>：触发高频事件后N秒内函数只会执行一次，如果N秒内高频事件载此触发，则重新计算时间</p>
+<h3 id="什么是防抖和节流？有什么区别？如何实现"><a href="#什么是防抖和节流？有什么区别？如何实现" class="headerlink" title="什么是防抖和节流？有什么区别？如何实现"></a>什么是防抖和节流？有什么区别？如何实现</h3><p><strong>防抖</strong>：触发高频事件后N秒内函数只会执行一次，如果N秒内高频事件再次触发，则重新计算时间</p>
 <p>实现方法：每次触发事件时并且在取消之前延时调用</p>
 <p><strong>节流</strong>：高频事件触发，但在n秒内只会执行一次，所以节流会稀释函数的执行频率</p>
-<p>实现方法：每次触发是按时都判断当前是否有等待执行的延时函数</p>
+<p>实现方法：每次触发是按时判断当前是否有等待执行的延时函数</p>
 <h3 id="介绍下Set、Map、WeakSet和WeakMap的区别？"><a href="#介绍下Set、Map、WeakSet和WeakMap的区别？" class="headerlink" title="介绍下Set、Map、WeakSet和WeakMap的区别？"></a>介绍下Set、Map、WeakSet和WeakMap的区别？</h3><p>Set:</p>
 <p>·成员唯一、无序且不重复</p>
 <p>·只有键值没有键名（键值和键名一样）</p>
