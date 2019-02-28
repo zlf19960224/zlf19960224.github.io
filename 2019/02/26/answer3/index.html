@@ -444,6 +444,46 @@
 <li><code>CSS</code> 选择符从右往左匹配查找，避免 <code>DOM</code> 深度过深</li>
 <li>将频繁运行的动画变为图层，图层能够阻止该节点回流影响别的元素。比如对于 <code>video</code> 标签，浏览器会自动将该节点变为图层。</li>
 </ul>
+<h5 id="预加载与预渲染"><a href="#预加载与预渲染" class="headerlink" title="预加载与预渲染"></a>预加载与预渲染</h5><blockquote>
+<p><em>预加载</em>：<code>预加载可以一定程度上降低首屏的加载时间，因为可以将一些不影响首屏但重要的文件延后加载，唯一缺点就是兼容性不好。</code></p>
+</blockquote>
+<blockquote>
+<p>预渲染：<code>预渲染虽然可以提高页面的加载速度，但是要确保该页面百分百会被用户在之后打开，否则就白白浪费资源去渲染</code></p>
+</blockquote>
+<p><strong>跨网站指令码</strong>（英语：Cross-site scripting，通常简称为：<code>XSS</code>）是一种网站应用程式的安全漏洞攻击，是<a href="https://www.wikiwand.com/zh-hans/%E4%BB%A3%E7%A2%BC%E6%B3%A8%E5%85%A5" target="_blank" rel="noopener">代码注入</a>的一种。它允许恶意使用者将程式码注入到网页上，其他使用者在观看网页时就会受到影响。这类攻击通常包含了 HTML 以及使用者端脚本语言。<code>XSS</code> 分为三种：反射型，存储型和 DOM-based</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">escape</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  str = str.replace(<span class="regexp">/&amp;/g</span>, <span class="string">'&amp;amp;'</span>)</span><br><span class="line">  str = str.replace(<span class="regexp">/&lt;/g</span>, <span class="string">'&amp;lt;'</span>)</span><br><span class="line">  str = str.replace(<span class="regexp">/&gt;/g</span>, <span class="string">'&amp;gt;'</span>)</span><br><span class="line">  str = str.replace(<span class="regexp">/"/g</span>, <span class="string">'&amp;quto;'</span>)</span><br><span class="line">  str = str.replace(<span class="regexp">/'/g</span>, <span class="string">'&amp;#39;'</span>)</span><br><span class="line">  str = str.replace(<span class="regexp">/`/g</span>, <span class="string">'&amp;#96;'</span>)</span><br><span class="line">  str = str.replace(<span class="regexp">/\//g</span>, <span class="string">'&amp;#x2F;'</span>)</span><br><span class="line">  <span class="keyword">return</span> str</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xss = <span class="built_in">require</span>(<span class="string">'xss'</span>)</span><br><span class="line"><span class="keyword">var</span> html = xss(<span class="string">'&lt;h1 id="title"&gt;XSS Demo&lt;/h1&gt;&lt;script&gt;alert("xss");&lt;/script&gt;'</span>)</span><br><span class="line"><span class="comment">// -&gt; &lt;h1&gt;XSS Demo&lt;/h1&gt;&amp;lt;script&amp;gt;alert("xss");&amp;lt;/script&amp;gt;</span></span><br><span class="line"><span class="built_in">console</span>.log(html)</span><br></pre></td></tr></table></figure>
+<p>以上示例使用了 <code>js-xss</code> 来实现。可以看到在输出中保留了 <code>h1</code> 标签且过滤了 <code>script</code> 标签</p>
+<h3 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a><code>CSP</code></h3><blockquote>
+<p>内容安全策略 (<a href="https://developer.mozilla.org/en-US/docs/Glossary/CSP" target="_blank" rel="noopener">CSP</a>) 是一个额外的安全层，用于检测并削弱某些特定类型的攻击，包括跨站脚本 (<a href="https://developer.mozilla.org/en-US/docs/Glossary/XSS" target="_blank" rel="noopener">XSS</a>) 和数据注入攻击等。无论是数据盗取、网站内容污染还是散发恶意软件，这些攻击都是主要的手段。</p>
+</blockquote>
+<p>我们可以通过 CSP 来尽量减少 XSS 攻击。CSP 本质上也是建立白名单，规定了浏览器只能够执行特定来源的代码。</p>
+<ul>
+<li><p>只允许加载本站资源</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Content-Security-Policy</span>: default-src ‘self’</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>只允许加载 HTTPS 协议图片</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Content-Security-Policy</span>: img-src https://*</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>允许加载任何来源框架</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Content-Security-Policy</span>: child-src 'none'</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h2><blockquote>
+<p><strong>跨站请求伪造</strong>（英语：Cross-site request forgery），也被称为 <strong>one-click attack</strong>或者 <strong>session riding</strong>，通常缩写为 <strong>CSRF</strong> 或者 <strong>XSRF</strong>， 是一种挟制用户在当前已登录的 Web 应用程序上执行非本意的操作的攻击方法。<a href="https://www.wikiwand.com/zh/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0#citenoteRistic1" target="_blank" rel="noopener">[1]</a> 跟<a href="https://www.wikiwand.com/zh/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC" target="_blank" rel="noopener">跨網站指令碼</a>（XSS）相比，<strong>XSS</strong> 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。</p>
+</blockquote>
+<p>简单点说，<code>CSRF</code> 就是利用用户的登录态发起恶意请求。</p>
+<p>假设网站中有一个通过 Get 请求提交用户评论的接口，那么攻击者就可以在钓鱼网站中加入一个图片，图片的地址就是评论接口</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://www.domain.com/xxx?comment='attack'"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果接口是 Post 提交的，就相对麻烦点，需要用表单来提交接口</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://www.domain.com/xxx"</span> <span class="attr">id</span>=<span class="string">"CSRF"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"comment"</span> <span class="attr">value</span>=<span class="string">"attack"</span> <span class="attr">type</span>=<span class="string">"hidden"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="如何防御"><a href="#如何防御" class="headerlink" title="如何防御"></a>如何防御</h3><p>防范 CSRF 可以遵循以下几种规则：</p>
+<ol>
+<li>Get 请求不对数据进行修改</li>
+<li>不让第三方网站访问到用户 Cookie</li>
+<li>阻止第三方网站请求接口</li>
+<li>请求时附带验证信息，比如验证码或者 token</li>
+</ol>
 
             </div>
             <hr>
@@ -689,8 +729,9 @@
                 </a>
                 <div class="card-content article-content">
                     <div class="summary">2019-02-24更
-《增长黑客》第一章
-你不可能从现在预测未来，只有回头看时，才会发现事物之间的联系。所以你必须相信，那些生命中的点点滴滴，将在你未来的生命里，以某种方式串联起来。你必须相信一些东西——你的勇气，宿命，生活，因缘，随便什</div>
+###《增长黑客》第一章—-&gt;增长黑客的崛起
+
+你不可能从现在预测未来，只有回头看时，才会发现事物之间的联系。所以你必须相信，那些生命中的点点滴滴，将在你未来的生命里，以某种方式串联起来。你必须相信一些东西——</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-26

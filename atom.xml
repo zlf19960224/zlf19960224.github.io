@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.zlf1996.xyz/"/>
-  <updated>2019-02-26T12:32:05.214Z</updated>
+  <updated>2019-02-27T10:42:30.943Z</updated>
   <id>https://www.zlf1996.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.zlf1996.xyz/2019/02/26/answer3/"/>
     <id>https://www.zlf1996.xyz/2019/02/26/answer3/</id>
     <published>2019-02-26T08:49:46.077Z</published>
-    <updated>2019-02-26T12:32:05.214Z</updated>
+    <updated>2019-02-27T10:42:30.943Z</updated>
     
     <summary type="html">
     
@@ -47,7 +47,7 @@
     <link href="https://www.zlf1996.xyz/2019/02/26/addHooker/"/>
     <id>https://www.zlf1996.xyz/2019/02/26/addHooker/</id>
     <published>2019-02-26T08:48:48.834Z</published>
-    <updated>2019-02-26T08:51:03.910Z</updated>
+    <updated>2019-02-28T07:05:53.521Z</updated>
     
     <summary type="html">
     
@@ -125,7 +125,7 @@
     <link href="https://www.zlf1996.xyz/2019/02/24/answer1/"/>
     <id>https://www.zlf1996.xyz/2019/02/24/answer1/</id>
     <published>2019-02-24T01:57:03.329Z</published>
-    <updated>2019-02-25T11:24:06.639Z</updated>
+    <updated>2019-02-28T07:35:16.036Z</updated>
     
     <summary type="html">
     
@@ -142,16 +142,16 @@
       <category term="面试题" scheme="https://www.zlf1996.xyz/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
     
-      <category term="-面试题" scheme="https://www.zlf1996.xyz/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+      <category term="面试题" scheme="https://www.zlf1996.xyz/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
   </entry>
   
   <entry>
-    <title>剑指offe遇到的问题与nginx配置</title>
+    <title>剑指offer遇到的问题与nginx配置</title>
     <link href="https://www.zlf1996.xyz/2019/02/12/offer&amp;&amp;nginx/"/>
     <id>https://www.zlf1996.xyz/2019/02/12/offer&amp;&amp;nginx/</id>
     <published>2019-02-12T10:42:49.534Z</published>
-    <updated>2019-02-12T10:47:18.701Z</updated>
+    <updated>2019-02-28T07:33:48.923Z</updated>
     
     <summary type="html">
     
@@ -177,7 +177,7 @@
     <link href="https://www.zlf1996.xyz/2019/02/12/jsDesignMode/"/>
     <id>https://www.zlf1996.xyz/2019/02/12/jsDesignMode/</id>
     <published>2019-02-12T10:42:49.523Z</published>
-    <updated>2019-02-12T10:48:34.361Z</updated>
+    <updated>2019-02-28T07:34:12.629Z</updated>
     
     <summary type="html">
     
@@ -194,7 +194,7 @@
       <category term="设计模式" scheme="https://www.zlf1996.xyz/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="Js" scheme="https://www.zlf1996.xyz/tags/Js/"/>
+      <category term="设计模式" scheme="https://www.zlf1996.xyz/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -203,7 +203,7 @@
     <link href="https://www.zlf1996.xyz/2019/02/12/ECMstudying/"/>
     <id>https://www.zlf1996.xyz/2019/02/12/ECMstudying/</id>
     <published>2019-02-12T10:42:49.511Z</published>
-    <updated>2019-02-12T10:45:53.772Z</updated>
+    <updated>2019-02-28T07:34:46.184Z</updated>
     
     <summary type="html">
     
@@ -229,7 +229,7 @@
     <link href="https://www.zlf1996.xyz/2019/02/12/directive/"/>
     <id>https://www.zlf1996.xyz/2019/02/12/directive/</id>
     <published>2019-02-12T10:42:49.490Z</published>
-    <updated>2019-02-12T10:44:50.176Z</updated>
+    <updated>2019-02-28T07:34:57.128Z</updated>
     
     <summary type="html">
     
@@ -255,7 +255,7 @@
     <link href="https://www.zlf1996.xyz/2019/01/02/vue-router/"/>
     <id>https://www.zlf1996.xyz/2019/01/02/vue-router/</id>
     <published>2019-01-02T12:38:34.917Z</published>
-    <updated>2019-01-02T12:46:46.057Z</updated>
+    <updated>2019-02-28T07:30:18.115Z</updated>
     
     <summary type="html">
     
@@ -269,10 +269,10 @@
     
     </summary>
     
-      <category term="-Vue" scheme="https://www.zlf1996.xyz/categories/Vue/"/>
+      <category term="Vue" scheme="https://www.zlf1996.xyz/categories/Vue/"/>
     
     
-      <category term="-Vue" scheme="https://www.zlf1996.xyz/tags/Vue/"/>
+      <category term="Vue" scheme="https://www.zlf1996.xyz/tags/Vue/"/>
     
   </entry>
   
@@ -281,7 +281,7 @@
     <link href="https://www.zlf1996.xyz/2018/11/27/yidongduan/"/>
     <id>https://www.zlf1996.xyz/2018/11/27/yidongduan/</id>
     <published>2018-11-27T08:14:06.867Z</published>
-    <updated>2018-11-27T08:16:10.588Z</updated>
+    <updated>2019-02-28T07:30:52.831Z</updated>
     
     <summary type="html">
     
@@ -295,8 +295,12 @@
     
     </summary>
     
+      <category term="Vue" scheme="https://www.zlf1996.xyz/categories/Vue/"/>
     
-      <category term="移动端,Vue" scheme="https://www.zlf1996.xyz/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF-Vue/"/>
+    
+      <category term="Vue" scheme="https://www.zlf1996.xyz/tags/Vue/"/>
+    
+      <category term="移动端" scheme="https://www.zlf1996.xyz/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
     
   </entry>
   
@@ -357,7 +361,7 @@
     <link href="https://www.zlf1996.xyz/2018/11/04/number/"/>
     <id>https://www.zlf1996.xyz/2018/11/04/number/</id>
     <published>2018-11-04T13:03:35.185Z</published>
-    <updated>2018-11-04T13:16:13.112Z</updated>
+    <updated>2019-02-28T07:32:53.860Z</updated>
     
     <summary type="html">
     
@@ -373,8 +377,6 @@
     
       <category term="Vue" scheme="https://www.zlf1996.xyz/categories/Vue/"/>
     
-      <category term="Js" scheme="https://www.zlf1996.xyz/categories/Vue/Js/"/>
-    
     
       <category term="Vue" scheme="https://www.zlf1996.xyz/tags/Vue/"/>
     
@@ -385,7 +387,7 @@
     <link href="https://www.zlf1996.xyz/2018/10/31/React-router4.0/"/>
     <id>https://www.zlf1996.xyz/2018/10/31/React-router4.0/</id>
     <published>2018-10-31T14:12:32.551Z</published>
-    <updated>2018-11-02T19:07:19.411Z</updated>
+    <updated>2019-02-28T07:32:41.504Z</updated>
     
     <summary type="html">
     
@@ -401,12 +403,8 @@
     
       <category term="React" scheme="https://www.zlf1996.xyz/categories/React/"/>
     
-      <category term="Js" scheme="https://www.zlf1996.xyz/categories/React/Js/"/>
     
-    
-      <category term="React.js" scheme="https://www.zlf1996.xyz/tags/React-js/"/>
-    
-      <category term="react-router" scheme="https://www.zlf1996.xyz/tags/react-router/"/>
+      <category term="React" scheme="https://www.zlf1996.xyz/tags/React/"/>
     
   </entry>
   
@@ -415,7 +413,7 @@
     <link href="https://www.zlf1996.xyz/2018/10/31/truely-dom/"/>
     <id>https://www.zlf1996.xyz/2018/10/31/truely-dom/</id>
     <published>2018-10-31T14:12:32.541Z</published>
-    <updated>2018-11-02T19:10:23.925Z</updated>
+    <updated>2019-02-28T07:33:26.491Z</updated>
     
     <summary type="html">
     
@@ -429,10 +427,10 @@
     
     </summary>
     
-      <category term="Js" scheme="https://www.zlf1996.xyz/categories/Js/"/>
+      <category term="React" scheme="https://www.zlf1996.xyz/categories/React/"/>
     
     
-      <category term="js" scheme="https://www.zlf1996.xyz/tags/js/"/>
+      <category term="React" scheme="https://www.zlf1996.xyz/tags/React/"/>
     
   </entry>
   
@@ -467,7 +465,7 @@
     <link href="https://www.zlf1996.xyz/2018/10/25/js-answer/"/>
     <id>https://www.zlf1996.xyz/2018/10/25/js-answer/</id>
     <published>2018-10-25T02:26:05.956Z</published>
-    <updated>2018-11-02T19:09:46.553Z</updated>
+    <updated>2019-02-28T07:34:27.661Z</updated>
     
     <summary type="html">
     
@@ -483,38 +481,8 @@
     
       <category term="ES6" scheme="https://www.zlf1996.xyz/categories/ES6/"/>
     
-      <category term="Js" scheme="https://www.zlf1996.xyz/categories/ES6/Js/"/>
-    
-    
-      <category term="js" scheme="https://www.zlf1996.xyz/tags/js/"/>
     
       <category term="ES6" scheme="https://www.zlf1996.xyz/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>how to publish</title>
-    <link href="https://www.zlf1996.xyz/2018/10/24/new/"/>
-    <id>https://www.zlf1996.xyz/2018/10/24/new/</id>
-    <published>2018-10-24T15:11:38.046Z</published>
-    <updated>2018-11-02T19:10:01.860Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="new" scheme="https://www.zlf1996.xyz/categories/new/"/>
-    
-    
-      <category term="new" scheme="https://www.zlf1996.xyz/tags/new/"/>
     
   </entry>
   
