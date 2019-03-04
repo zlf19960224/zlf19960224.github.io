@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.zlf1996.xyz/"/>
-  <updated>2019-02-27T10:42:30.943Z</updated>
+  <updated>2019-03-04T12:56:12.044Z</updated>
   <id>https://www.zlf1996.xyz/</id>
   
   <author>
@@ -17,11 +17,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>面试题4</title>
+    <link href="https://www.zlf1996.xyz/2019/03/04/answer4/"/>
+    <id>https://www.zlf1996.xyz/2019/03/04/answer4/</id>
+    <published>2019-03-04T12:53:54.717Z</published>
+    <updated>2019-03-04T12:56:12.044Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="面试题" scheme="https://www.zlf1996.xyz/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    
+      <category term="面试题" scheme="https://www.zlf1996.xyz/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《我的阴阳两届》---王小波</title>
+    <link href="https://www.zlf1996.xyz/2019/03/04/myBlackWhiteWorld-wxb/"/>
+    <id>https://www.zlf1996.xyz/2019/03/04/myBlackWhiteWorld-wxb/</id>
+    <published>2019-03-04T12:53:54.713Z</published>
+    <updated>2019-03-04T12:55:21.774Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="读后感" scheme="https://www.zlf1996.xyz/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+    
+    
+      <category term="书" scheme="https://www.zlf1996.xyz/tags/%E4%B9%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>面试题3</title>
     <link href="https://www.zlf1996.xyz/2019/02/26/answer3/"/>
     <id>https://www.zlf1996.xyz/2019/02/26/answer3/</id>
     <published>2019-02-26T08:49:46.077Z</published>
-    <updated>2019-02-27T10:42:30.943Z</updated>
+    <updated>2019-02-28T11:32:01.554Z</updated>
     
     <summary type="html">
     
@@ -47,7 +99,7 @@
     <link href="https://www.zlf1996.xyz/2019/02/26/addHooker/"/>
     <id>https://www.zlf1996.xyz/2019/02/26/addHooker/</id>
     <published>2019-02-26T08:48:48.834Z</published>
-    <updated>2019-02-28T07:05:53.521Z</updated>
+    <updated>2019-03-04T12:55:25.727Z</updated>
     
     <summary type="html">
     
@@ -61,7 +113,7 @@
     
     </summary>
     
-      <category term="读后摘抄" scheme="https://www.zlf1996.xyz/categories/%E8%AF%BB%E5%90%8E%E6%91%98%E6%8A%84/"/>
+      <category term="读后感" scheme="https://www.zlf1996.xyz/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
     
     
       <category term="书" scheme="https://www.zlf1996.xyz/tags/%E4%B9%A6/"/>
