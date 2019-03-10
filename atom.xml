@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.zlf1996.xyz/"/>
-  <updated>2019-03-04T12:56:12.044Z</updated>
+  <updated>2019-03-10T11:24:12.088Z</updated>
   <id>https://www.zlf1996.xyz/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端面试题5</title>
+    <link href="https://www.zlf1996.xyz/2019/03/10/answer5/"/>
+    <id>https://www.zlf1996.xyz/2019/03/10/answer5/</id>
+    <published>2019-03-10T11:20:57.797Z</published>
+    <updated>2019-03-10T11:24:12.088Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="面试题" scheme="https://www.zlf1996.xyz/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    
+      <category term="面试题" scheme="https://www.zlf1996.xyz/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>面试题4</title>
@@ -99,7 +125,7 @@
     <link href="https://www.zlf1996.xyz/2019/02/26/addHooker/"/>
     <id>https://www.zlf1996.xyz/2019/02/26/addHooker/</id>
     <published>2019-02-26T08:48:48.834Z</published>
-    <updated>2019-03-04T12:55:25.727Z</updated>
+    <updated>2019-03-05T13:43:37.980Z</updated>
     
     <summary type="html">
     
@@ -509,32 +535,6 @@
     
     
       <category term="随笔" scheme="https://www.zlf1996.xyz/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6及ES6+</title>
-    <link href="https://www.zlf1996.xyz/2018/10/25/js-answer/"/>
-    <id>https://www.zlf1996.xyz/2018/10/25/js-answer/</id>
-    <published>2018-10-25T02:26:05.956Z</published>
-    <updated>2019-02-28T07:34:27.661Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="ES6" scheme="https://www.zlf1996.xyz/categories/ES6/"/>
-    
-    
-      <category term="ES6" scheme="https://www.zlf1996.xyz/tags/ES6/"/>
     
   </entry>
   
