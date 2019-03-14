@@ -3,6 +3,98 @@
   
     
     <entry>
+      <title>HTTP-笔记</title>
+      <link href="/2019/03/14/HTTP/"/>
+      <url>/2019/03/14/HTTP/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><h4 id="Content-Security-Policy"><a href="#Content-Security-Policy" class="headerlink" title="Content-Security-Policy"></a>Content-Security-Policy</h4><ol><li>限制资源获取<ol><li><code>default-src</code></li></ol></li><li>报告资源获取越权</li></ol><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Security-Policy"</span> <span class="attr">content</span>=<span class="string">"script-src 'self'"</span>&gt;</span></span><br></pre></td></tr></table></figure><blockquote><p>不需要预请求</p><ul><li>GET</li><li>POST</li><li>HEAD</li></ul></blockquote><blockquote><p>允许<code>content-type</code></p><p><code>text/plain</code></p><p><code>multipart/form-data</code></p><p><code>application/x-www-form-urlencoded</code></p></blockquote><h4 id="预请求"><a href="#预请求" class="headerlink" title="预请求"></a>预请求</h4><p><code>Access-Control-Allow-Origins:*</code></p><p><code>Access-Control-Allow-Headers:X-Test-Cors</code></p><p><code>Access-Control-Allow-Methods:&#39;&#39;PUT,POST...&#39;</code></p><h4 id="cache-control"><a href="#cache-control" class="headerlink" title="cache-control"></a>cache-control</h4><blockquote><ul><li>public</li><li>private</li><li>no-cache</li><li>max-age</li></ul></blockquote><p><code>no-store</code>—&gt;本地和代理服务器都不能缓存,忽略所有缓存</p><p><code>no-transform</code>—&gt;不允许更改本地和代理服务器</p><p>####<code>last-modefied&amp;Etag</code></p><h4 id="cookie中的domain"><a href="#cookie中的domain" class="headerlink" title="cookie中的domain"></a><code>cookie中的domain</code></h4><blockquote><p>设置同一父域名，子域名不同情况下的cookie能共用</p></blockquote><h4 id="TCP和UDP区别"><a href="#TCP和UDP区别" class="headerlink" title="TCP和UDP区别"></a>TCP和UDP区别</h4><ol><li>tcp有连接，udp无连接</li><li>tcp稳定，udp不稳定，可能丢包</li><li>tcp用于http，udp用于实时的视频、通讯等</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> HTTP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTTP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>webpack study</title>
+      <link href="/2019/03/14/webpack-study/"/>
+      <url>/2019/03/14/webpack-study/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="HMR局部更新"><a href="#HMR局部更新" class="headerlink" title="HMR局部更新"></a>HMR局部更新</h2><p><code>hot，hotOnly(刷新页面)</code></p><p><code>plugins：{new webpack.HotMouduleReplacementPlugin();}</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(module.hot)&#123;</span><br><span class="line">    module.hot.accept(&apos;./xxxx.js&apos;,()=&gt;&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="babel"><a href="#babel" class="headerlink" title="babel"></a>babel</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rules:[&#123;</span><br><span class="line">    test:<span class="regexp">/\.js$/</span>,</span><br><span class="line">    exclude:<span class="regexp">/node_modules/</span>,</span><br><span class="line">    loader:<span class="string">'babel-loader'</span>,</span><br><span class="line">    options:&#123;</span><br><span class="line">        presets:[[<span class="string">"@babel/present-env"</span>],&#123;<span class="attr">useBuiltIns</span>:<span class="string">'usage'</span>&#125;]<span class="comment">//es6语法转es5</span></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;]</span><br><span class="line"><span class="keyword">import</span> <span class="string">'@babel/polyfill'</span></span><br></pre></td></tr></table></figure><h2 id="配置React代码的打包"><a href="#配置React代码的打包" class="headerlink" title="配置React代码的打包"></a>配置React代码的打包</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">options:&#123;</span><br><span class="line">        presets:[[<span class="string">"@babel/present-env"</span>,&#123;<span class="attr">useBuiltIns</span>:<span class="string">'usage'</span>&#125;],<span class="string">"@babel/preset-react"</span>]<span class="comment">//es6语法转es5</span></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><p><code>preset</code>从右往左，从下往上</p><h2 id="Tree-shaking"><a href="#Tree-shaking" class="headerlink" title="Tree shaking"></a>Tree shaking</h2><blockquote><ol><li><p>只支持ESmodule属于静态引入，commonJs动态引入；</p><p><code>optimization:{</code></p><p>​    <code>usedExports:true//production不需要写此段代码</code></p><p><code>}</code></p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;    //package.json</span><br><span class="line">&gt;    &#123;sideEffects:["@babel/polyfill","*.css"]&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></li></ol></blockquote><blockquote></blockquote><h2 id="code-splitting"><a href="#code-splitting" class="headerlink" title="code splitting"></a>code splitting</h2><blockquote><p>代码拆分，</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">optimization:&#123;</span><br><span class="line">    splitChunks:&#123;</span><br><span class="line">        chunks:&apos;all&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="chunk是什么"><a href="#chunk是什么" class="headerlink" title="chunk是什么"></a>chunk是什么</h2><blockquote><p>生成的每一个文件都是一个chunk</p></blockquote><h2 id="prefetch-preload"><a href="#prefetch-preload" class="headerlink" title="prefetch,preload"></a>prefetch,preload</h2><p><code>magic注释</code>:</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//尽量使用prefetch，/*webpackPrefetch: true*/</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> webpack </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> webpack </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>实现超出js范围的bigInt的两个数字相加</title>
+      <link href="/2019/03/14/add-bigInt/"/>
+      <url>/2019/03/14/add-bigInt/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>####实现超出js范围的bigInt的两个数字相加</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> aArr = <span class="built_in">Array</span>.prototype.slice.call(a.toString());</span><br><span class="line">    <span class="keyword">var</span> bArr = <span class="built_in">Array</span>.prototype.slice.call(b.toString());</span><br><span class="line">    <span class="keyword">var</span> arr = [];</span><br><span class="line">    <span class="keyword">let</span> inc = [];</span><br><span class="line">    <span class="keyword">var</span> length = aArr.length &gt; bArr.length ? aArr.length : bArr.length;</span><br><span class="line">    <span class="comment">//初始化所有为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = length - <span class="number">1</span>; j &gt; <span class="number">0</span>; j--) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!aArr[j]) &#123;</span><br><span class="line">            aArr.unshift(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!bArr[j]) &#123;</span><br><span class="line">            bArr.unshift(<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    aArr = aArr.map(<span class="function">(<span class="params">item</span>) =&gt;</span> <span class="built_in">parseInt</span>(item));</span><br><span class="line">    bArr = bArr.map(<span class="function">(<span class="params">item</span>) =&gt;</span> <span class="built_in">parseInt</span>(item));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = length - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i === j) &#123;</span><br><span class="line">                <span class="keyword">var</span> result = aArr[i] + bArr[j];</span><br><span class="line">                inc.unshift(result);</span><br><span class="line">                arr = resolution(inc);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resolution</span>(<span class="params">inc</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> k = inc.length - <span class="number">1</span>; k &gt;= <span class="number">0</span>; k--) &#123;</span><br><span class="line">        <span class="keyword">if</span> (inc[k] &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (k &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                inc[k] -= <span class="number">10</span>;</span><br><span class="line">                inc[k - <span class="number">1</span>] += <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">parseInt</span>(inc.join(<span class="string">""</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(add(<span class="number">999999</span>, <span class="number">999</span>));</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>面试题6</title>
+      <link href="/2019/03/11/answer6/"/>
+      <url>/2019/03/11/answer6/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="错误监控"><a href="#错误监控" class="headerlink" title="错误监控"></a>错误监控</h2><ul><li>即时运行错误<ul><li>window.onError</li><li>try..catch..</li></ul></li><li>资源加载错误<ul><li>object.onError</li><li>performance.getentries</li><li>error捕获<ul><li>addEventListener(()=&gt;{},true)        </li></ul></li></ul></li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//跨域js错误</span></span><br><span class="line"><span class="comment">//1、script设置crossOrigin</span></span><br><span class="line"><span class="comment">//2、服务器设置Acess-control-allow-origin</span></span><br></pre></td></tr></table></figure><blockquote><p>上报错误的两种</p><ol><li>Ajax</li><li>new Image（）<ul><li><code>（new Image()).src=&quot;http://www.baidu.com?sssstsa=2&amp;ssas=1&quot;</code></li></ul></li></ol></blockquote><h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><ol><li>压缩文件合并代码，减少http</li><li>异步加载script<ul><li>document.createElement(“script”)</li><li>defer<ul><li>html解析完后异步加载script</li></ul></li><li>async<ul><li>加载完毕后异步加载script</li></ul></li></ul></li><li>使用CDN</li><li>使用preDNS<ul><li>meta强制a标签中做DNS预解析</li><li><code>&lt;link rel=&quot;dns-prefetch&quot; content=&quot;on&quot;&gt;</code></li></ul></li><li>使用浏览器缓存<ul><li>强制缓存<ul><li>Expires（设置具体时间，以客户端为准）</li><li>cache-control(设置时间长度，以客户端为准)</li></ul></li><li>协商缓存<ul><li>last-modefied</li><li>If-modefied-since</li><li>Etag(hash)</li><li>If-None-Match</li></ul></li></ul></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>前端面试题5</title>
       <link href="/2019/03/10/answer5/"/>
       <url>/2019/03/10/answer5/</url>

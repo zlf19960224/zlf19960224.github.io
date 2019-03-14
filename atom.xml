@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.zlf1996.xyz/"/>
-  <updated>2019-03-10T11:24:12.088Z</updated>
+  <updated>2019-03-14T11:23:06.692Z</updated>
   <id>https://www.zlf1996.xyz/</id>
   
   <author>
@@ -15,6 +15,110 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTTP-笔记</title>
+    <link href="https://www.zlf1996.xyz/2019/03/14/HTTP/"/>
+    <id>https://www.zlf1996.xyz/2019/03/14/HTTP/</id>
+    <published>2019-03-14T11:24:37.400Z</published>
+    <updated>2019-03-14T11:23:06.692Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="HTTP" scheme="https://www.zlf1996.xyz/categories/HTTP/"/>
+    
+    
+      <category term="HTTP" scheme="https://www.zlf1996.xyz/tags/HTTP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>webpack study</title>
+    <link href="https://www.zlf1996.xyz/2019/03/14/webpack-study/"/>
+    <id>https://www.zlf1996.xyz/2019/03/14/webpack-study/</id>
+    <published>2019-03-14T11:24:04.333Z</published>
+    <updated>2019-03-14T11:23:49.265Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="webpack" scheme="https://www.zlf1996.xyz/categories/webpack/"/>
+    
+    
+      <category term="webpack" scheme="https://www.zlf1996.xyz/tags/webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实现超出js范围的bigInt的两个数字相加</title>
+    <link href="https://www.zlf1996.xyz/2019/03/14/add-bigInt/"/>
+    <id>https://www.zlf1996.xyz/2019/03/14/add-bigInt/</id>
+    <published>2019-03-14T11:22:17.392Z</published>
+    <updated>2019-03-14T11:21:47.885Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="面试题" scheme="https://www.zlf1996.xyz/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    
+      <category term="面试题" scheme="https://www.zlf1996.xyz/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试题6</title>
+    <link href="https://www.zlf1996.xyz/2019/03/11/answer6/"/>
+    <id>https://www.zlf1996.xyz/2019/03/11/answer6/</id>
+    <published>2019-03-11T08:47:12.529Z</published>
+    <updated>2019-03-11T08:43:49.626Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="面试题" scheme="https://www.zlf1996.xyz/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    
+      <category term="面试题" scheme="https://www.zlf1996.xyz/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>前端面试题5</title>
@@ -431,110 +535,6 @@
     
     
       <category term="React" scheme="https://www.zlf1996.xyz/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数字格式化代码的详细解析</title>
-    <link href="https://www.zlf1996.xyz/2018/11/04/number/"/>
-    <id>https://www.zlf1996.xyz/2018/11/04/number/</id>
-    <published>2018-11-04T13:03:35.185Z</published>
-    <updated>2019-02-28T07:32:53.860Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Vue" scheme="https://www.zlf1996.xyz/categories/Vue/"/>
-    
-    
-      <category term="Vue" scheme="https://www.zlf1996.xyz/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React-router4.0的坑</title>
-    <link href="https://www.zlf1996.xyz/2018/10/31/React-router4.0/"/>
-    <id>https://www.zlf1996.xyz/2018/10/31/React-router4.0/</id>
-    <published>2018-10-31T14:12:32.551Z</published>
-    <updated>2019-02-28T07:32:41.504Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="React" scheme="https://www.zlf1996.xyz/categories/React/"/>
-    
-    
-      <category term="React" scheme="https://www.zlf1996.xyz/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>真实dom</title>
-    <link href="https://www.zlf1996.xyz/2018/10/31/truely-dom/"/>
-    <id>https://www.zlf1996.xyz/2018/10/31/truely-dom/</id>
-    <published>2018-10-31T14:12:32.541Z</published>
-    <updated>2019-02-28T07:33:26.491Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="React" scheme="https://www.zlf1996.xyz/categories/React/"/>
-    
-    
-      <category term="React" scheme="https://www.zlf1996.xyz/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>狠</title>
-    <link href="https://www.zlf1996.xyz/2018/10/25/casual-literator/"/>
-    <id>https://www.zlf1996.xyz/2018/10/25/casual-literator/</id>
-    <published>2018-10-25T10:27:59.368Z</published>
-    <updated>2018-11-02T19:09:33.492Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://www.zlf1996.xyz/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="随笔" scheme="https://www.zlf1996.xyz/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
